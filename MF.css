@@ -1,0 +1,386 @@
+
+.Common
+  {
+    position:       absolute;
+    left:           1;
+    top:            1;
+    width:          930;
+    height:         740;
+  }  
+
+.LayerTitleBar
+ {
+    filter:           progid:DXImageTransform.Microsoft.Gradient(startColorStr='#999999',endColorStr='#696969',gradientType='0');
+ }
+
+.LayerTitle,.LayerTitleGld
+  {
+    font-size:        11pt;
+    font-family:      "Courier new";
+    font-weight:       bold; 
+    color:            white;
+    filter:           progid:DXImageTransform.Microsoft.DropShadow(color=Black, offx=4, offy=4);
+  }
+.LayerTitleGld{color: gold}
+
+
+/* --------------------------------------------------------------------------*/
+/* Layer-design -------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+  
+.Version
+  {
+    font-size:        20pt;
+    font-family:      "Bauhaus 93";
+    font-weight:       bold; 
+    color:            '#009090';
+    filter:           progid:DXImageTransform.Microsoft.DropShadow(color='#004a4a', offx=3, offy=3);
+  }    
+
+
+.StdGradientVerticalGrey
+{
+    filter:             progid:DXImageTransform.Microsoft.Gradient(startColorStr='#757575',endColorStr='#A9A9A9',gradientType='0');
+}
+
+.StdGradientHorizontalGrey
+{
+    filter:             progid:DXImageTransform.Microsoft.Gradient(startColorStr='#757575',endColorStr='#A9A9A9',gradientType='1');
+}
+
+.StdGradientHorizontalLightGrey
+{
+    filter:             progid:DXImageTransform.Microsoft.Gradient(startColorStr='#696969',endColorStr='#CEDFF6',gradientType='1');
+}
+.StdGradientHorizontalCyan
+{
+    filter:             progid:DXImageTransform.Microsoft.Gradient(startColorStr='#008b8b',endColorStr='#CEDFF6',gradientType='1');
+}
+
+/* --------------------------------------------------------------------------*/
+/* Tab bar ------------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.TabStripPage
+{
+  width:              100%;
+  margin:             6px;
+  padding:            2px;
+  background-color:  dimgray;
+  border-bottom:     2pt outset;
+  border-color:      #006060;
+}
+
+/* --------------------------------------------------------------------------*/
+/* Text defintions ----------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.Txt9pt,.GoldTxt9pt
+   {
+    color:          darkgrey;
+    font-family:    "Courier new";
+    font-size:      9pt
+  }
+.GoldTxt9pt   {    color: gold;}
+
+.WhiteTxt8pt,.WhiteTxt10pt,.WhiteTxt12pt
+  {
+    color:          white;
+    font-family:    "Courier new";
+  }
+
+.WhiteTxt8pt {    font-size:      8pt;}
+.WhiteTxt10pt{    font-size:      10pt;}
+.WhiteTxt12pt{    font-size:      12pt;}
+
+.WhiteTxt12pt
+  {
+    color:            white;
+    font-family:      "Courier new";
+  }
+
+.YellowTxt9pt
+  {
+    color:            yellow;
+    font-family:      "Courier new";
+    font-size:        9pt
+  }
+
+.comInfoClass
+  {
+    font-family:      "veranda";
+    color:            white;
+    font-size:        8pt;
+    height:           22;
+    text-align:       center;
+    font-weight:      bold; 
+    background-color: #505050;
+  }
+  
+.LegendGn,.LegendGn9pt,.LegendGr,.LegendGrL,.LegendGrInvL,
+.LegendGrInv,.LegendGr10pt,.LegendGr9ptGrT1,.LegendGr10ptGrT1
+  {
+    font-family:      "veranda";
+    color:            white;
+    font-size:        8pt;
+    height:           22;
+    text-align:       center;
+    font-weight:      bold; 
+    filter:           progid:DXImageTransform.Microsoft.Gradient(startColorStr='#006060',endColorStr='#009090',gradientType='0');
+  }
+
+.LegendGrL,.LegendGrInvL     {    text-align:      left; }
+.LegendGn9pt                           {    font-size:       9pt;  }
+.LegendGr,.LegendGrL
+  {
+    font-size:        9pt;
+    filter:           progid:DXImageTransform.Microsoft.Gradient(startColorStr='#808080',endColorStr='#696969',gradientType='0');
+  }
+  .LegendGrInv,.LegendGrInvL
+  {
+    font-size:        9pt;
+    filter:           progid:DXImageTransform.Microsoft.Gradient(startColorStr='#696969',endColorStr='#808080',gradientType='0');
+  }
+  .LegendGr10pt
+  {
+    font-size:        10pt;
+    filter:           progid:DXImageTransform.Microsoft.Gradient(startColorStr='#898989',endColorStr='#696969',gradientType='0');
+  }
+  .LegendGr9ptGrT1
+  {
+    font-size:        9pt;
+    filter:           progid:DXImageTransform.Microsoft.Gradient(startColorStr='#898989',endColorStr='#696969',gradientType='1');
+  }
+  .LegendGr10ptGrT1
+  {
+    font-size:        10pt;
+    filter:           progid:DXImageTransform.Microsoft.Gradient(startColorStr='#898989',endColorStr='#696969',gradientType='1');
+  }
+
+  .LegendVertical10ptB
+  {
+    writing-mode:   tb-rl;
+    color:          wheat;
+    font-family:    arial;
+    font-size:      10pt;
+    font-weight:    bold; 
+  }
+
+/* --------------------------------------------------------------------------*/
+/* Input fields -------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+
+.InputTextW20,.InputTextW30W    { width:           30;   }
+.InputTextW25                              { width:           25;   }
+.InputTextW30,.InputTextW30B    { width:           30;   }
+.InputTextW40,.InputText8ptW40{ width:           40;   }
+.InputTextW44,.InputTextW44B    { width:           44;   }
+.InputTextW34                              { width:           34;   }
+.InputTextW50,.InputText8ptW50{ width:           50;   }
+.InputTextW55,.InputTextW55B    { width:           55;   }
+.InputTextW60,.InputText8ptW60{ width:           60;   }
+.InputTextW70,.InputText8ptW70{ width:           70;   }
+.InputTextW80                              { width:           80;   }
+.InputTextW100                            { width:           100;  }
+.InputTextW120                            { width:           120;  }
+.InputTextW140                            { width:           140;  }
+
+.InputTextW30B,.InputTextW44B,.InputTextW55B
+  {  font-weight:     bold;   }
+
+.InputTextW20,.InputTextW20W,
+.InputTextW30,.InputTextW30B,
+.InputTextW34,.InputTextW40,.InputText8ptW40,
+.InputText8ptW50,.InputText8ptW60,.InputText8ptW70,
+.InputTextW44,.InputTextW44B,
+.InputTextW50,
+.InputTextW55,.InputTextW55B,
+.InputTextW60,
+.InputTextW80,.InputTextW100,.InputTextW120,.InputTextW140
+  {
+    height:           18;
+    text-align:       center;
+    font-family:      "Courier New";
+    color:            black;
+    font-size:        8pt;
+  }
+.InputTextW20W
+  {
+    color:            white;
+    font-size:        10pt;
+  }
+ .InputText8ptW40,.InputText8ptW50,.InputText8ptW60,.InputText8ptW70
+ {    font-size:        8pt;  }
+/* --------------------------------------------------------------------------*/
+/* Output fields ------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.OutputTextW80,
+.OutputTextW60,
+.OutputTextW40,
+.OutputTextW40_7pt
+  {
+    text-align:        center;
+    height:           18;
+    font-family:      arial;
+    color:            black;
+    background-color:  mintcream;
+  }
+
+.OutputTextW60     { width:       60; }
+.OutputTextW40_7pt,
+.OutputTextW40     { width:       40; }
+.OutputTextW80     { width:       80; }
+
+.OutputTextW40,
+.OutputTextW60,
+.OutputTextW80     { font-size:    8pt;}  
+.OutputTextW40_7pt { font-size:    7pt;}  
+
+/* --------------------------------------------------------------------------*/
+/* Buttons ------------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.ButtonW36,.ButtonW50,.ButtonW60,.ButtonW70,.ButtonW80,.ButtonW90,.ButtonW100,.ButtonW120Gr,
+.ButtonW120,.ButtonW130,.ButtonW130Low,.ButtonW160,.ButtonW200,.ButtonW200,.ButtonWide,.ButtonSq,.ButtonSC
+  {
+    font-family:    arial;
+    font-size:      8pt;
+    height:          20;
+    width:          36;
+  }  
+
+.ButtonSC            { width:           26;       height:            26;}  
+.ButtonW50          { width:            50;     }  
+.ButtonW60          { width:            60;     }  
+.ButtonW70          { width:            70;     }  
+.ButtonW80          { width:            80;     }  
+.ButtonW90          { width:            90;     }  
+.ButtonW115        { width:           115;     }  
+.ButtonW100        { width:           100;     height:           25;}  
+.ButtonW130H      { width:           130;     height:           25;}  
+.ButtonW120,
+.ButtonW120Gr    { width:           120;     }  
+.ButtonW130        { width:           130;     }  
+.ButtonW130Low  { width:           130;     height:           20;}  
+.ButtonW140        { width:           140;}  
+.ButtonW160        { width:           160;     height:           22;}  
+.ButtonW160H      { width:           160;     height:           25;}  
+.ButtonW220        { width:           220;     height:           24;}  
+.ButtonW240        { width:           240;     height:           24;}  
+.ButtonWide        { width:           520;     height:           30;}
+
+.ButtonW120Gr { color:'#009090'; height:                   24;
+               font-weight:     bold;   background-color:  '#009090';} 
+.ButtonAutoB   { width:           60;      height:            34;
+                font-weight:     bold;   background-color:  magenta;
+                font-size:       7pt;   }
+              
+.ButtonSquare { height:          150;
+                width:          150;    }
+              
+/* --------------------------------------------------------------------------*/
+/* Display fields -----------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.DataValW40,.DataValW500
+  {
+    text-align:        center;
+    font-family:      "Courier New";
+    font-size:        8pt;
+    background-color: beige;
+    width:            40;
+    height:            16;
+    font-weight:       bold; 
+  }
+.DataValW500    { width: 500; }
+
+
+/* --------------------------------------------------------------------------*/
+/* Leds ---------------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.LedSmall
+  {
+    height:        15;
+    width:        15;
+  }  
+
+/* --------------------------------------------------------------------------*/
+/* Text ---------------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.PropTableVertical
+  {
+    writing-mode:   tb-rl;
+    color:          wheat;
+    font-family:    arial;
+    font-size:      8pt;
+  }
+
+
+.Txt7ptWh,.Txt7ptGldCour       { font-size:      7pt; }
+.Txt8ptWh,.Txt8ptWhVert ,
+.Txt8ptGldCour ,.Txt8ptBl      { font-size:       8pt; }
+.Txt9ptWh,.Txt9ptBl                 { font-size:       9pt; }
+.Txt10ptGld,.Txt10ptGldCour { font-size:      10pt; }
+.Txt10ptWh,.Txt10ptBl             { font-size:      10pt; }
+
+.Txt7ptWh,.Txt8ptWh,.Txt8ptWhVert,.Txt10ptWh
+  {  color:  wheat;  font-family:  veranda;  }
+.Txt10ptGld
+  {  color:  gold;  font-family:  veranda;  }
+  
+.Txt7ptGldCour,.Txt8ptGldCour,.Txt10ptGldCour  
+  {  color:  wheat;  font-family:  "Courier New";}
+.Txt8ptBl,.Txt9ptBl,.Txt10ptBl
+  {  color:  #001080;  font-family:  veranda;  }  
+.Txt8ptWhVert            {  writing-mode:   tb-rl; }
+
+.Txt8ptWh_BorderLr
+{
+    color:          wheat;
+    font-family:    arial;
+    font-size:      8pt;
+    border-color:   dimgray;
+    border-top:     blank;
+    border-bottom:  blank;
+    border-left:    1pt solid;
+    border-right:   1pt solid;
+}
+  
+/* --------------------------------------------------------------------------*/
+/* Select boxes -------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.Select
+  {
+    font-family:       arial;
+    font-size:         8pt;
+    background-color:  beige;
+  }
+/* --------------------------------------------------------------------------*/
+/* Border styles ------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+
+  .ThinBorderToBo  
+   { 
+    border-top:    1px solid;
+    border-bottom: 1px solid;
+    border-right:  blank;
+    border-left:   blank;
+    border-color:  darkgray;
+  }
+/* --------------------------------------------------------------------------*/
+/* Tab bar ------------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
+.BodyArea,.BodyAreaSmooth,.BodyAreaMaroon,.BodyAreaGreen
+{
+  filter:             progid:DXImageTransform.Microsoft.Gradient(startColorStr='#898989',endColorStr='#696969',gradientType='0');
+  height:             25;
+  border-width:       2px;
+  border-color:       dimgray;
+  border-style:       solid;
+  border-spacing:     5px;
+  color:              gold;
+}
+.BodyAreaSmooth
+  {filter:             progid:DXImageTransform.Microsoft.Gradient(startColorStr='#797979',endColorStr='#696969',gradientType='0');}
+
+.BodyAreaMaroon
+  {filter:             progid:DXImageTransform.Microsoft.Gradient(startColorStr='#800000',endColorStr='#830000',gradientType='0');}
+
+.BodyAreaGreen
+  {filter:             progid:DXImageTransform.Microsoft.Gradient(startColorStr='#007000',endColorStr='#009000',gradientType='0');}

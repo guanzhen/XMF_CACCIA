@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!--
+  DISPLAYFORMAT (format)):
+  state = acknowledge state
+  a   = Ascii
+  s   = unsigned short (16Bit)
+  sl  = signed long (32Bit)
+  f   = float (32 Bit)
+  e   = float (32 Bit, Scientific notation (mantissa/exponent), lowercase)
+  x   = hex (8Bit)
+  exp = Exponent (8Bit)
+-->
+  <MessageDecode>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- COMMANDS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <Commands>
+      <cmd>
+        <Line byteIndex="0" format="x"   >DOWNLOAD_VERSION</Line>
+        <Line byteIndex="2" format="x"   >DOWNLOAD_TARGET</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >RESET</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >GET_MEMORY_STRUCTURE</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >SELFTEST</Line>
+        <Line byteIndex="2" format="c"   >CONTACT_MODULE</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >CALIBRATION</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >PREPARE_MEASURE</Line>
+        <Line byteIndex="2" format="c"   >CONTACT_MODULE</Line>
+        <Line byteIndex="3" format="a"   >COMPONENT_TYPE</Line>
+        <Line byteIndex="4" format="f"   >EXPECTED_RESULT</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >START_MEASURE</Line>
+        <Line byteIndex="2" format="a"   >COMPONENT_TYPE</Line>
+        <Line byteIndex="3" format="a"   >RESISTANCE_TYPE</Line>
+        <Line byteIndex="4" format="e"   >EXPECTED_RESULT</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >START_AUTORANGE_MEASURE</Line>
+        <Line byteIndex="2" format="a"   >COMPONENT_TYPE</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >START_AUTOPOLARITY_D</Line>
+        <Line byteIndex="2" format="e"   >FORWARD_VOLTAGE</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >START_AUTOPOLARITY_C</Line>
+        <Line byteIndex="2" format="f"   >NOMINAL_VOLTAGE</Line>
+        <Line byteIndex="6" format="f"   >NOMINAL_CAPACITY</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >START_AUTODETECT</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >START_FORWARD_VOLTAGE</Line>
+        <Line byteIndex="2" format="f"   >NOMINAL_CURRENT</Line>
+        <Line byteIndex="6" format="f"   >MAX_VOLTAGE</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >GET_PERIPHERY</Line>
+        <Line byteIndex="2" format="c"   >PARAMETER_ID</Line>
+      </cmd>
+      <cmd>
+        <Line byteIndex="0" format="x"   >GET_DATA</Line>
+        <Line byteIndex="2" format="c"   >PARAMETER_ID</Line>
+      </cmd>
+    </Commands>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- ACKNOWLEDGES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <Acknowledges>
+      <ack>
+        <Line byteIndex="0" format="x"    >DOWNLOAD_VERSION</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="x"    >TARGET</Line>
+        <Line byteIndex="4" format="x"    >VERSION</Line>
+        <Line byteIndex="5" format="x"    >EDITION</Line>
+        <Line byteIndex="6" format="a"    >HW_ID</Line>
+        <Line byteIndex="7" format="a"    >VARIANT_ID</Line>
+      </ack>
+      <ack>
+        <Line byteIndex="0" format="x"    >RESET</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+      </ack>
+      <ack>
+        <Line byteIndex="0" format="x"   >GET_MEMORY_STRUCTURE</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="x"   >TARGET ID 1</Line>
+        <Line byteIndex="4" format="x"   >TARGET ID 2</Line>
+        <Line byteIndex="5" format="x"   >TARGET ID 3</Line>
+        <Line byteIndex="6" format="x"   >TARGET ID 4</Line>
+      </ack>
+      <ack>
+        <Line byteIndex="0" format="x"    >SELFTEST</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="f"    >RESISTOR_CANTACT1_2</Line>
+        <Line byteIndex="7" format="f"    >CAPACITY</Line>
+      </ack>
+      <ack>
+        <Line byteIndex="0" format="x"    >CALIBRATION</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+      </ack>
+      <ack>
+        <Line byteIndex="0" format="x"    >PREPARE_MEASURE</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+      </ack>
+      <ack>
+        <Line byteIndex="0" format="x"    >START_MEASURE</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="f"    >CAPACITY</Line>
+        <Line byteIndex="7" format="f"    >RESISTOR</Line>
+      </ack>
+      <ack>
+        <Line byteIndex="0" format="x"    >START_AUTORANGE_MEASURE</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="f"    >C or L Result</Line>
+        <Line byteIndex="7" format="f"    >RESISTANCE</Line>
+      </ack>
+      <ack>
+        <Line byteIndex="0" format="x"    >START_AUTOPOLARITY_D</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="f"    >FORWARD VOLTAGE</Line>
+      </ack>      
+      <ack>
+        <Line byteIndex="0" format="x"    >START_AUTOPOLARITY_C</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="f"    >CAPACITY</Line>
+      </ack>      
+      <ack>
+        <Line byteIndex="0" format="x"    >START_AUTODETECT</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="e"    >C or L RESULT</Line>
+        <Line byteIndex="7" format="e"    >RESISTANCE</Line>
+      </ack>      
+      <ack>
+        <Line byteIndex="0" format="x"    >START_FORWARD_VOLTAGE</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="e"    >VOLTAGE_RESULT</Line>
+      </ack>      
+      <ack>
+        <Line byteIndex="0" format="x"    >GET_PERIPHERY</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="x2"   >VALUE</Line>
+      </ack>      
+      <ack>
+        <Line byteIndex="0" format="x"    >GET_DATA</Line>
+        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="sl"   >VALUE</Line>
+      </ack>      
+    </Acknowledges>
+      
+  </MessageDecode>
+

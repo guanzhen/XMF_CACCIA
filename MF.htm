@@ -1,0 +1,730 @@
+
+<HTML>
+
+
+<HEAD>
+  <!--[if CacciaThemed 1]>  
+    <link rel="stylesheet" type="text/css" href="../../CacciaThemed.css">
+  <![endif]-->
+  <!--[if !CacciaThemed]>  
+    <link rel="stylesheet" type="text/css" href="../../Caccia.css">
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="MF.css" />
+  <link rel="stylesheet" type="text/css" href="../../../codebase/grid/dhtmlxgrid.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../codebase/grid/skins/dhtmlxgrid_dhx_skyblue.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../codebase/menu/skins/dhtmlxmenu_dhx_skyblue.css"/>
+  <script src="../../../codebase/dhtmlxcommon.js" type="text/javascript"></script>
+  <script src="../../../codebase/dhtmlxcontainer.js"></script>
+  <script src="../../../codebase/grid/dhtmlxgrid.js" type="text/javascript"></script>
+  <script src="../../../codebase/grid/ext/dhtmlxgrid_srnd.js" type="text/javascript"></script>
+  <script src="../../../codebase/grid/dhtmlxgridcell.js" type="text/javascript"></script>
+  <script src="../../../codebase/grid/excells/dhtmlxgrid_excell_link.js" type="text/javascript"></script>
+  <script src="../../../codebase/grid/ext/dhtmlxgrid_splt.js" type="text/javascript"></script>
+  <script src="../../../codebase/grid/ext/dhtmlxgrid_fast.js" type="text/javascript"></script>
+  <script src="../../../codebase/treegrid/dhtmlxtreegrid.js" type="text/javascript"></script>
+  <script src="../../../codebase/numberFormat/number-functions.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../codebase/progressBar/progressBar.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../codebase/menu/skins/dhtmlxmenu_dhx_skyblue.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../codebase/slider/dhtmlxslider.css"/>
+  <link rel="stylesheet" type="text/css" href="../../../codebase/combo/dhtmlxcombo.css"/>
+  <!-- TAB BAR ______________________________________________________________-->
+  <link rel="stylesheet" type="text/css" href="../../../codebase/tabbar/dhtmlxtabbar.css"/>  
+  <script src="../../../codebase/tabbar/dhtmlxtabbar.js" type="text/javascript"></script>
+
+</HEAD>
+
+<BODY>
+
+<div class="Common" id="LayerAndromeda">
+
+  <div id="LayerBody" style="position:absolute; top:5px; left:0px; width:756px; height:665px; margin-top:5px">
+    <div id="_MF_TabBar" enableautoresize="True" style="height:100%;">
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <!-- Simulate Control Board Commands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <div id="TabStripPage0" class="TabStripPage" >
+        <table id="SimCBTabCmd" width="99%" height="290px" align="center">
+          <td>
+            <fieldset style="border-width:3px;height=85%" >
+              <legend class="Txt10ptGld"><b>Predefined commands</b> <small>To send a command <b>RIGHT CLICK</b> the appropriate row</small></legend>
+              <table width="100%" height="100%" style="margin: 1px">
+                <tr>
+                  <td height="90%" width="96%" align="center">
+                    <div   id="_CommandTable" class="dhtmlxGrid" imgpath="../../../codebase/grid/imgs/" height="100%" width="100%"></div>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+          </td>
+        </table>
+        <table id="SimCBTabRecAck" width="99%" height="320px" align="center" style="margin-top:1px;">
+          <td>
+            <fieldset style="border-width:3px; height:100%">
+              <legend class="Txt10ptGld"><b>Received acknowledge</b> <small>To decode acknowledge <b>RIGHT CLICK</b> the appropriate row</small></legend>
+              <table width="100%" style="margin:1px">      
+                <tr>
+                  <td width="99%" height="285px">
+                    <div   id="_AckTableGrid" class="dhtmlxGrid" imgpath="../../../codebase/grid/imgs/" height="100%" width="100%"></div>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+          </td>
+        </table>
+      </div>
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <!-- Simulate Control Board memory interface ~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <div id="TabStripPage1" class="TabStripPage" >
+        <table>
+          <tr><td height="3px"/></tr>
+        </table>
+        <!-- Download ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <fieldset align="center" style="width=98%; margin-top:20px; ">
+          <legend class="Txt10ptGld"><b>Download</b></legend>
+          <table width="100%" align="center" style="margin:2px;margin-top:10px;margin-bottom:5px">
+            <tr>
+              <td width="2%" />
+              <td width="28%" align="left" ><button class="ButtonW160" id="BUTTON_LOADHEXFILE">Load file</button></td>
+              <td width="12%" align="right" class="Txt9pt" >Target&nbsp;</td>
+              <td width="20%" align="center"><input class="InputTextW100"  id="DwnldTarget" type="text"/></td>
+              <td width="8%"/>
+              <td width="28%" align="right" ><button class="ButtonW160" id="BUTTON_DOWNLOAD">Download</button></td>
+              <td width="2%" />
+            </tr><tr>
+              <td/>
+            </tr><tr>
+              <td/>
+              <td colspan="5" height="10px"  width="85%" class="comInfoClass" align="center" id="DwnldFile"></td>
+              <td/>
+            </tr>
+          </table>
+        </fieldset>        
+        <!-- Progressbar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <table align="center" width="98%" style="margin-top: 10px">
+          <tr>
+            <td width="96%">
+              <object id="ProgressBar" height="11px" width="100%" style="background:transparent;font-size:7pt;margin-right:2px" classid="clsid:ADEAF006-1EB1-4DCD-9A28-5EEC3F942FD0">
+              </object>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr><td /></tr>
+        </table>
+        <!-- Memory interface ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <fieldset align="center" style="border-width:3px; height:80%; width=98%;">
+          <legend class="Txt10ptGld"><b>Memory interface</b></legend>
+          <table align="center" width="90%" style="margin:2px;margin-top:5px;margin-bottom:5px">
+            <tr>
+              <td colspan="2" align="left"><button class="ButtonW160" id="BUTTON_READ_MEMORY" value="Button" >Read memory</button></td>
+              <td align="right" class="Txt9pt">Select Target</td>
+              <td align="center">
+                <select class="Select" size="1" id="SelMemTarget" style="width:126">
+                  <option selected="selected" value="0x10">Measurement board</option>
+                  <option                     value="0x20">Contact board 1  </option>
+                  <option                     value="0x21">Contact board 2  </option>
+                  <option                     value="0x22">Contact board 3  </option>
+                </select> 
+              </td>
+              <td align="right" class="Txt9pt" >Start address</td>
+              <td><input class="InputText8ptW70" id="MemoryStartAdr" value="0x000000" maxlength="8" /></td>  
+            </tr><tr>
+              <td align="center" class="Txt9pt"><b>Data format</b></td>
+              <td>
+                <select id="MemDataFormat">
+                 <option selected="selected">&#160;&#160;8 Bit</option>
+                 <option                    >16 Bit</option>
+                </select>
+              </td>
+              <td align="right" class="Txt9pt">Select Memory Type</td>
+              <td align="center">
+                <select class="Select" size="1" id="SelMemType" style="width:126">
+                  <option selected="selected">Memory</option>
+                  <option                    >Device Id</option>
+                </select> 
+              </td>
+              <td align="right" class="Txt9pt" >End address</td>
+              <td ><input class="InputText8ptW70" id="MemoryEndAdr" value="0x010000" maxlength="8"/></td>  
+            </tr><tr>
+            </tr>
+          </table>
+          <table width="92%" align="center" height="60%" style="margin:2px;margin-top:5px;">
+            <tr>
+              <td width="100%" height="100%" rowspan="11">
+                <object align="center" width="100%" height="100%" id="HexEditCtrl"  classid="clsid:2E93307E-777D-49E4-886A-D5B04470796A">
+                </object>
+              </td>
+            </tr>
+          </table>
+
+          <table  width="90%" align="center" style="margin-top:10px">
+            <tr>
+              <td colspan="5" align="center" class="LegendGr10pt" style="color:gold;"><strong>Read 32 bit / write 16 bit to selcteted target</strong></td>
+            </tr><tr>
+              <td/>
+              <td align="center" class="Txt9pt"><b>Value</b>  </td>
+              <td align="center" class="Txt9pt"><b>Address</b></td>
+              <td align="center" class="Txt9pt"><b>Value</b>  </td>
+              <td/>
+            </tr><tr>
+              <td width="23%" align="left">  <button class="ButtonW120"    id="BUTTON_READ_WORD"  value="Button" >Read long</button></td>
+              <td width="17%" align="center"><input  class="InputTextW140" id="WordReadVal"       value="" type="text" size="32" maxlength="32"/></td>
+              <td width="20%" align="center"><input  class="InputTextW80"  id="WordMemoryAdr"     value="0x000000" type="text" size="6" maxlength="10"/></td>
+              <td width="17%" align="center"><input  class="InputTextW100" id="WordWriteVal"      value="0" type="text" size="6" maxlength="6"/></td>
+              <td width="23%" align="right"> <button class="ButtonW120"    id="BUTTON_WRITE_WORD" value="Button" >Write word</button></td>
+            </tr><tr>
+              <td/>
+              <td align="center">
+                <select class="Select" size="1" id="SelReadMemSingleVal" style="width:140">
+                  <option selected="selected">Display byte value</option>
+                  <option                    >Display word value</option>
+                  <option                    >Display long value</option>
+                </select> 
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      </div>
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <!-- Simulate Measurement Board ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <div id="TabStripPage2" class="TabStripPage" style="background-color:lightsteelblue;">
+        <table id="SimMBTabBut" width="99%" align="center" style="margin-top:5px;">
+          <tr>
+            <td width="20%" align="center"><button class="ButtonW130" id="BUTTON_STARTREC">Start simulation</button></td>        
+            <td width="20%" align="center"><button class="ButtonW130" id="BUTTON_STOPREC">Stop simulation</button></td>        
+            <td width="20%" align="center"><img src="icon/WaitCommand.gif" id="WaitCommand"    style="display:none; visibility:hidden; filter:blendTrans(Duration=0.2)"/>
+                                           <img src="icon/Download.gif"    id="DownloadIcon"   style="display:none;"/>
+                                           <img src="icon/readMemory.gif"  id="ReadMemoryIcon" style="display:none;"/>
+            </td> 
+            <td width="20%"><img src="icon/connectAnim.gif" id="DownloadAnim" height="16" style="display:none;"/></td> 
+            <td width="20%" align="right"> <button class="ButtonW130Low" id="BUTTON_CLEAR_REC_GRID">Clear all</button></td>        
+          </tr>
+        </table>
+        <table id="SimMBTabRecCmd" width="99%" align="center" style="margin-top:1px;">
+          <td>
+            <fieldset style="border-width:3px; border-color:steelblue;">
+              <legend class="Txt10ptBl"><b>Received command</b> &#160; <small>To decode command <b>RIGHT CLICK</b> the appropriate row</small></legend>
+              <table width="100%">
+                <tr>
+                  <td height="230px">
+                    <div id="_CmdTableGrid" class="dhtmlxGrid" imgpath="../../../codebase/grid/imgs/" width="100%" height="100%" style="margin-top:5px"></div>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+          </td>
+        </table>
+        <table id="SimMBTabDefAck" width="99%" height="320px" align="center">
+          <td>
+            <fieldset style="border-width:3px; border-color:steelblue; height:100%">
+              <legend class="Txt10ptBl"><b>Predefined Acknowledges</b></legend>
+              <table width="100%" height="96%">
+                <tr>
+                  <td width="25%" align="right" class="Txt8ptBl"><b>Random acknowlege error</b></td>
+                  <td width="5%"  ><input type=checkbox id="RandAckErrCheckBox"></td>
+                  <td width="5%" id="RandAckErrCnt" style="display:none">&nbsp;&nbsp;&nbsp;</td>
+                  <td width="20%" align="right" class="Txt8ptBl" id="RepRateAckErrTxt" style="display:none">Max repetition rate</td>
+                  <td width="9%" ><input class="InputTextW50" id="RepRateAckErrInp" style="display:none" type="text" value="10" size="4" maxlength="4" ></td>
+                  <td width="30%">
+                    <select class="Select" size="1" id="SelRandAckErr" style="width:220;display:none">
+                      <option selected="selected" value=1  >ACK_NOK                       </option>
+                      <option                     value=2  >ACK_UNKNOWN_CMD               </option>
+                      <option                     value=3  >ACK_NOT_IMPLEMENTED           </option>
+                      <option                     value=4  >ACK_UNKNOWN_TARGET            </option>
+                      <option                     value=5  >ACK_INVALID_PARAM             </option>
+                      <option                     value=6  >ACK_WRONG_LENGTH              </option>
+                      <option                     value=64 >ACK_DEST_FW_NOT_EXIST         </option>
+                      <option                     value=170>ACK_ACTION_NOT_POSSIBLE       </option>
+                      <option                     value=16 >ACK_NO_MORE_DATA              </option>
+                      <option                     value=20 >ACK_ERROR_WRONG_MEMORY_ADDRESS</option>
+                      <option                     value=21 >ACK_ERROR_WRONG_MEMORY_TARGET </option>
+                      <option                     value=208>ACK_CRC_ERROR                 </option>
+                      <option                     value=209>ACK_CM_NOT_CONNECTED          </option>
+                      <option                     value=210>ACK_WRONG_POLARITY            </option>
+                      <option                     value=211>ACK_MAX_VOLTAGE               </option>
+                    </select> 
+                  </td>     
+                </tr><tr>
+                  <td colspan="6" width="99%" height="92%">
+                    <div   id="_AcknowledgeTable" class="dhtmlxGrid" imgpath="../../../codebase/grid/imgs/" height="100%" width="100%"></div>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+          </td>
+        </table>
+      </div>
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <!--  scope ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <div id="TabStripPage3" class="TabStripPage">
+        <table style="width:100%; height:5px; margin-top:5px">
+          <tr>
+            <td/>
+          </tr>
+        </table>
+        <table align="center"  width="100%" height="98%">
+          <tr>
+            <td width="98%" align="right"><button class="ButtonW100" id="BUTTON_CLEAR_SCOPE">Clear content</button></td>
+            <td width="2%"/>
+          </tr><tr>
+           <td colspan="2" height="95%">
+            <object id="SerScopeGrid" width="100%" height="100%" classid="clsid:68523E50-56EB-11D3-B739-CAA1986A452F"></object>
+           </td>
+         </tr>
+        </table>
+      </div>
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <!--  info ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <div id="TabStripPage4" class="TabStripPage">
+        <table align="center" style="margin-top:20px">
+          <tr>
+            <td align="center" class="WhiteTxt8pt">&#160;&#9830; Mesurement Feeder simulation   &#160;&#160;-&#160;&#160;  &#169; 2017 ASM Assembly Systems &#9830;&#160;</td>
+          </tr>
+          <tr>
+            <td align="center" class="WhiteTxt8pt">&#9830; Author: A.Geisenhofer &#9830; </td>
+          </tr>
+        </table>
+
+        <table>
+          <tr><td height="10px"/></tr>
+        </table>
+
+        <fieldset align="center" style="border-width:3px; width:90%; height:5%;">
+          <legend class="Txt10ptWh"><b>Tool description</b></legend>
+          <table height="100%" width="100%">
+            <tr>
+              <td align="center" ><button class="ButtonW160" id="BUTTON_OpenToolSpec">Open tool description</button></td>
+            </tr>
+          </table>
+        </fieldset>
+        
+        <table>
+          <tr><td height="5px"/></tr>
+        </table>
+        
+        <fieldset align="center" style="border-width:3px; width:90%; height:20%;">
+          <legend class="Txt10ptWh"><b>Modification history</b></legend>
+          <table height="100%" width="100%">
+            <tr><td height="100%" width="100%">
+              <div id="_InfoGrid" class="dhtmlxGrid" imgpath="../../../codebase/grid/imgs/" height="100%" width="100%"></div>
+            </td></tr>
+          </table>
+        </fieldset>
+        
+        <table>
+          <tr><td height="5px"/></tr>
+        </table>
+        
+        <fieldset align="center" style="border-width:3px; width:90%; height:40%;">
+          <legend class="Txt10ptWh"><b>HW overview</b></legend>
+          <table align="center" style="margin-top:5px">
+            <tr>
+              <td width="100%" align="center"><img src="icon/MF.gif"/></td>        
+            </tr><tr>
+              <td/>
+            </tr>
+          </table>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- System ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <div id="LayerBodyx" style="position:absolute; top:5px; left:755px; width:270px; height:665px; margin:6px;">
+    <table width="100%" style="margin-top:15px">
+      <tr>
+        <td rowspan="2" width="10%" align="center"><img src="icon/serial.gif"/></td>
+        <td width="80%" class="comInfoClass" align="center" id="ComInfo">Measurement Feeder <br/> Test Studio</td>
+        <td rowspan="2" width="10%" align="center"><img id="connectState" src="icon/disconnect.gif"/></td>
+      </tr><tr>
+        <td class="comInfoClass" align="center" id="SimInfo"></td>
+      </tr>
+    </table>
+    <!-- COM ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <fieldset style="border-width:3px; border-color:steelblue;margin-top:10px;">
+      <legend class="Txt10ptBl"><b>COM</b></legend>
+      <table width="100%" align="center" style="margin-top:8px">
+        <tr>
+          <td align="center"><button class="ButtonW220" id="BUTTON_OPEN_CLOSE_DEVICE">Open COM device</button></td>
+        </tr><tr>
+          <td height="5px"/>
+        </tr><tr>
+          <td width="100%" height="150px">
+            <div id="_SystemPara" class="dhtmlxGrid" style="margin-top:5px" imgpath="../../../codebase/grid/imgs/" height="100%" width="100%"></div>
+          </td>
+        </tr><tr>
+          <td height="5px"/>
+        </tr>
+      </table>
+    </fieldset>
+    <table>
+      <tr>
+        <td height="8px"/>
+      </tr>
+    </table>
+    <!-- Decoder ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <fieldset style="border-width:3px; border-color:steelblue;">
+      <legend class="Txt10ptBl"><b>Decoder</b></legend>
+      <table width="100%" align="center">
+        <tr>
+          <td height="10px" class="comInfoClass" align="center" id="DecoderInfo"></td>
+        </tr><tr>
+          <td height="2px"/>
+        </tr><tr>
+          <td width="100%" height="255px">
+            <div id="_DecoderGrid" class="dhtmlxGrid" imgpath="../../../codebase/grid/imgs/" height="100%" width="100%"></div>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <table>
+      <tr>
+        <td><img src="icon/Siplace.gif"/></td>
+      </tr>
+    </table>
+  </div>
+  
+</div>
+
+
+</BODY>
+
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- Tab bar ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script type="text/javascript">
+    /* <![CDATA[ */  
+    var MF_TabBar = new dhtmlXTabBar("_MF_TabBar","top");
+    MF_TabBar.init = function()
+    {
+      this.setImagePath("../../../codebase/tabbar/imgs/");
+      this.setSkin("modern");
+      this.addTab( "page0", "Sim CB Cmd"     ,"140px" );
+      this.addTab( "page1", "Sim CB Mem/Dwld","140px" );
+      this.addTab( "page2", "Sim MBoard"     ,"140px" );
+      this.addTab( "page3", "Serial scope"   ,"140px" );
+      this.addTab( "page4", "Info"           ,"140px" );
+      this.setContent( "page0", TabStripPage0 );
+      this.setContent( "page1", TabStripPage1 );
+      this.setContent( "page2", TabStripPage2 );
+      this.setContent( "page3", TabStripPage3 );
+      this.setContent( "page4", TabStripPage4 );
+      this.setTabActive( "page0" );
+      for ( var i = 0; i < this.getNumberOfTabs(); i++ ) 
+      {
+        this.setCustomStyle( 'page' + i, 'steelblue', 'black', 'font-size:9pt;' );
+      }
+    } 
+    /* ]]> */
+  </script>
+  
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- Simulate control board ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+  <!-- Commands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script language="JScript" type="text/javascript">
+    /* <![CDATA[ */  
+    var CommandTableGrid = new dhtmlXGridObject('_CommandTable');
+    CommandTableGrid.setSizes();
+    CommandTableGrid.initGrid = function()
+    {
+      this.selMultiRows = true;
+      this.imgURL = "../../../codebase/grid/imgs/icons_greenfolders/";
+      this.setHeader("<center>Command,Cmd,Len,Para0,Para1,Para2,Para3," +
+                        "Para4,Para5,Para6,Para7,Para8,Para9",null,["font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;"]);
+      this.setInitWidths ("152,46,40,46,46,46,46,46,46,46,46,46,46");
+      this.setColAlign   ("left,center,center,center,center,center,center,center,center,center,center,center,center");
+      this.setColTypes   ("ro,ro,ro,co,ed,ed,ed,ed,ed,ed,ed,ed,ed");
+      this.setColSorting ("na,na,na,na,na,na,na,na,na,na,na,na,na");
+      this.init();
+      this.enableColSpan(true);
+      //this.setSkin("modern");
+      this.setSkin("dhx_web");
+      //this.setSkin("dhx_skyblue");
+      //this.setSkin("dhx_terrace");
+      this.splitAt(3);
+      this.loadXML("Config/CommandTable.xml");
+      var rNo = this.getRowsNum();
+      for (var i=0; i<rNo;i++)
+      {
+        this.setCellTextStyle(this.getRowId(i),0,"color:#F86600;font-size:7pt;font-weight:bold;font-weight:bold;");
+        this.setCellTextStyle(this.getRowId(i),1,"color:#101010;font-size:7pt;");
+        this.setCellTextStyle(this.getRowId(i),2,"color:#101010;font-size:7pt;border-right:3px;border-right-color:#F86600; border-right-style:double");
+        for (var x=3; x<13;x++)
+        {
+          if (this.cells(this.getRowId(i),x).getValue() == "")
+            this.setCellTextStyle(this.getRowId(i),x,"background-color:#E8E8E8;");
+          else
+            this.setCellTextStyle(this.getRowId(i),x,"color:#101010;font-size:7pt;");
+        }
+      }
+    }
+    
+    // ~~~ functions ~~~~~~~~~~~~~~~~~~~~~~~
+    CommandTableGrid.getVal        = function(row, col){ return(this.cells(this.getRowId(row),col).cell.innerHTML); }
+    CommandTableGrid.getColspan    = function(row, col){ return "" | this.cells(this.getRowId(row),col).cell._attrs["colspan"]; }
+    /* ]]> */
+  </script>
+  
+  <!-- Received acknowledges ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script language="JScript" type="text/javascript">
+    /* <![CDATA[ */  
+    var AckTableGrid = new dhtmlXGridObject('_AckTableGrid');
+    AckTableGrid.setSizes();
+    AckTableGrid.initGrid = function()
+    {
+      this.selMultiRows = true;
+      this.imgURL = "../../../codebase/grid/imgs/icons_greenfolders/";
+      this.setHeader("<center>Acknowledge,Cmd,Len,State,Data0,Data1,Data2,Data3," +
+                        "Data4,Data5,Data6,Data7,CS",null,["font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;"]);
+      this.setInitWidths ("148,46,40,46,46,46,46,46,46,46,46,46,40");
+      this.setInitWidths ("152,46,40,46,46,46,46,46,46,46,46,46,40");      
+      this.setColAlign   ("left,center,center,center,center,center,center,center,center,center,center,center,center");
+      this.setColTypes   ("ro,ro,ro,ro,ro,ro,ro,ro,ro,ro,ro,ro,ro");
+      this.setColSorting ("na,na,na,na,na,na,na,na,na,na,na,na,na");
+      this.init();
+      this.setSkin("modern");
+      for (var i=0; i<8; i++)
+      {
+        this.addRow(this.uid(), " , , , , , , , , , , , , ");
+        this.setCellTextStyle(this.getRowId(i),0,"font-family:arial; font-size:7pt;color:red;font-weight:bold");
+        for (var x=1;x<13;x++) { this.setCellTextStyle(this.getRowId(i),x,"font-size:7pt;color:#202020;"); }
+      }
+    }
+    AckTableGrid.DelRow        = function (index)         { this.deleteRow(this.getRowId(index)); }
+    AckTableGrid.setVal        = function (row, col, val) { this.cells(this.getRowId(row),col).cell.innerHTML = val; }
+    AckTableGrid.getVal        = function (row, col)      { return(this.cells(this.getRowId(row),col).cell.innerHTML); }
+    AckTableGrid.SetRowTextRed = function (row, color)    { this.setRowTextStyle(this.getRowId(row), "font-size:7pt;color:red"); }
+    AckTableGrid.AddRow        = function (index) 
+    { 
+      this.addRow(this.uid(), " , , , , , , , , , , , , ", index); 
+      this.setCellTextStyle(this.getRowId(0),0,"font-family:arial; font-size:7pt;color:#006060;font-weight:bold");
+      for (var x=1;x<13;x++){ this.setCellTextStyle(this.getRowId(0),x,"font-size:7pt;color:#202020;"); }
+      if (this.getRowsNum() % 2)
+        this.setRowColor(this.getRowId(0),"#F0F0F0");
+      else
+        this.setRowColor(this.getRowId(0),"#FFFFFF");
+    }
+
+    /* ]]> */
+  </script>
+  
+  
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- Simulate measurement board ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+  <!-- Received commands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script language="JScript" type="text/javascript">
+    /* <![CDATA[ */  
+    var CmdTableGrid = new dhtmlXGridObject('_CmdTableGrid');
+    CmdTableGrid.setSizes();
+    CmdTableGrid.initGrid = function()
+    {
+      this.selMultiRows = true;
+      this.imgURL = "../../../codebase/grid/imgs/icons_greenfolders/";
+      this.setHeader("<center>Command,Cmd,Len,Para0,Para1,Para2,Para3," +
+                        "Para4,Para5,Para6,Para7,Para8,CS",null,["font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;"]);
+      this.setInitWidths ("152,46,40,46,46,46,46,46,46,46,46,46,40");
+      this.setColAlign   ("left,center,center,center,center,center,center,center,center,center,center,center,center");
+      this.setColTypes   ("ro,ro,ro,ro,ro,ro,ro,ro,ro,ro,ro,ro,ro");
+      this.setColSorting ("na,na,na,na,na,na,na,na,na,na,na,na,na");
+      this.setSkin("modern");
+      this.init();
+      for (var i=0; i<6; i++)
+      {
+        this.addRow(this.uid(), " , , , , , , , , , , , , ");
+        this.setCellTextStyle(this.getRowId(i),0,"font-family:arial; font-size:7pt;color:#007050;font-weight:bold");
+        for (var x=1;x<13;x++) { this.setCellTextStyle(this.getRowId(i),x,"font-size:7pt;color:#202020;"); }
+      }
+    }
+    
+    CmdTableGrid.AddRow = function (index) 
+    { 
+      this.addRow(this.uid(), " , , , , , , , , , , , , ", index); 
+      this.setCellTextStyle(this.getRowId(0),0,"font-family:arial; font-size:7pt;color:#006060;font-weight:bold");
+      for (var x=1;x<13;x++){ this.setCellTextStyle(this.getRowId(0),x,"font-size:7pt;color:#202020;"); }
+      if (this.getRowsNum() % 2)
+        this.setRowColor(this.getRowId(0),"#F0F0F0");
+      else
+        this.setRowColor(this.getRowId(0),"#FFFFFF");
+    }
+    CmdTableGrid.DelRow = function (index)           { this.deleteRow(this.getRowId(index)); }
+    CmdTableGrid.setVal = function(row, col, val)    { this.cells(this.getRowId(row),col).cell.innerHTML = val; }
+    CmdTableGrid.getVal = function(row,col)          { return(this.cells(this.getRowId(row),col).cell.innerHTML); }
+    CmdTableGrid.SetRowTextRed = function(row, color){ this.setRowTextStyle(this.getRowId(row), "font-size:7pt;color:red"); }
+    /* ]]> */
+  </script>
+
+  <!-- Predefined acknowledges ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script language="JScript" type="text/javascript">
+    /* <![CDATA[ */  
+    var AcknowledgeTableGrid = new dhtmlXGridObject('_AcknowledgeTable');
+    AcknowledgeTableGrid.setSizes();
+    AcknowledgeTableGrid.initGrid = function()
+    {
+      this.selMultiRows = true;
+      this.imgURL = "../../../codebase/grid/imgs/icons_greenfolders/";
+      this.setHeader("<center>Acknowledge,Delay,Cmd,Len,State,Data0,Data1,Data2,Data3," +
+                        "Data4,Data5,Data6,Data7",null,["font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;"]);
+      this.setInitWidths ("152,46,40,46,46,46,46,46,46,46,46,46,46");
+      this.setColAlign   ("left,center,center,center,center,center,center,center,center,center,center,center,center");
+      this.setColTypes   ("ro,ed,ro,ro,ed,ed,ed,ed,ed,ed,ed,ed,ed");
+      this.setColSorting ("na,na,na,na,na,na,na,na,na,na,na,na,na");
+      this.init();
+      this.enableColSpan(true);
+      this.setSkin("dhx_web");
+      this.splitAt(5);
+      this.loadXML("Config/AckTable.xml");
+      var rNo = this.getRowsNum();
+      for (var i=0; i<rNo;i++)
+      {
+        this.setCellTextStyle(this.getRowId(i),0,"color:#F86600;font-size:7pt;font-weight:bold;font-weight:bold;");
+        this.setCellTextStyle(this.getRowId(i),1,"color:#101010;font-size:7pt;");
+        this.setCellTextStyle(this.getRowId(i),2,"color:#101010;font-size:7pt;");
+        this.setCellTextStyle(this.getRowId(i),3,"color:#101010;font-size:7pt;border-right:3px;border-right-color:#F86600; border-right-style:double");
+        for (var x=4; x<13;x++)
+        {
+          if (this.cells(this.getRowId(i),x).getValue() == "")
+            this.setCellTextStyle(this.getRowId(i),x,"background-color:#E8E8E8;");
+          else
+            this.setCellTextStyle(this.getRowId(i),x,"color:#101010;font-size:7pt;");
+        }
+      }      
+    }
+    AcknowledgeTableGrid.getVal        = function(rowId, col) { return (this.cells(rowId,col).cell.innerHTML); }
+    AcknowledgeTableGrid.getVal        = function(row,col)    { return(this.cells(this.getRowId(row),col).cell.innerHTML); }
+    AcknowledgeTableGrid.getColspan    = function(row, col)   { return "" | this.cells(this.getRowId(row),col).cell._attrs["colspan"]; }
+
+    /* ]]> */
+  </script>
+
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- COM  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script language="JScript" type="text/javascript">
+    /* <![CDATA[ */  
+    var SysParaGrid = new dhtmlXGridObject('_SystemPara');
+    SysParaGrid.setSizes(); 
+    SysParaGrid.initGrid = function()
+    {
+      this.selMultiRows = true;
+      this.imgURL = "../../../codebase/grid/imgs/icons_greenfolders/";
+      this.setHeader(" Property ,Value",null,
+                       ["font-size:7pt;",
+                        "font-size:7pt;"]);
+      this.setInitWidths ("155,100");
+      this.setColAlign   ("left,left");
+      this.setColTypes   ("tree,ed");
+      this.setColSorting ("na,na");
+      this.init();
+      this.setSkin("modern");
+      this.loadXML("Config/SystemPara.xml");
+    }
+    SysParaGrid.setVal = function(row, val){ this.cells(this.getRowId(row),1).cell.innerHTML = val; }
+    SysParaGrid.getVal = function(row)     { return(this.cells(this.getRowId(row),1).cell.innerHTML); }
+    SysParaGrid.expAll = function()        { this.expandAll(); }
+
+    /* ]]> */
+  </script>
+
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- Decoder grid ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script language="JScript" type="text/javascript">
+    /* <![CDATA[ */  
+    var DecoderGrid = new dhtmlXGridObject('_DecoderGrid');
+    DecoderGrid.setSizes();
+    DecoderGrid.initGrid = function()
+    {
+      this.imgURL = "../../../codebase/grid/imgs/icons_greenfolders/";
+      this.setHeader("<center>Content,<center>Value",null,["font-size:7pt;","font-size:7pt;"]);
+      this.setInitWidths ("150,105");
+      this.setColAlign   ("left,center");
+      this.setColTypes   ("ro,ro");
+      this.setColSorting ("na,na");
+      this.setSkin("modern");
+      this.init();
+      for (var i=0; i<9; i++)
+      {
+        this.addRow(this.uid(), " , ");
+        for (var x=0;x<2;x++) { this.setCellTextStyle(this.getRowId(i),x,"font-size:7pt;color:#202020;"); }
+      }
+      this.startFastOperations();
+    }
+    DecoderGrid.setVal = function(row,col,val) { this.cells(this.getRowId(row),col).cell.innerHTML = val; }
+    DecoderGrid.AddRow = function ()           { this.addRow(this.uid(), " , "); }
+    DecoderGrid.SetRowTextRed   = function(row){ this.setRowTextStyle(this.getRowId(row), "font-size:8pt;color:red"); }
+    DecoderGrid.SetRowTextBlack = function(row){ this.setRowTextStyle(this.getRowId(row), "font-size:8pt;color:#202020;"); }
+
+    /* ]]> */
+  </script>
+  
+  <!-- ABOUT GRID ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script language="JavaScript" type="text/javascript">
+    /* <![CDATA[ */  
+    var InfoGrid  = new dhtmlXGridObject('_InfoGrid');
+    InfoGrid.setSizes(); 
+    InfoGrid.initGrid = function()
+    {
+      this.setHeader        ("Version,Date,Modification,Precondition");
+      this.setImagePath     ("../../../codebase/grid/imgs/");
+      this.setInitWidths    ("80,80,370,120");
+      this.setColAlign      ("center,center,left,center");
+      this.setColTypes      ("ro,ro,ro,ro");
+      this.setColSorting    ("na,na,na,na");
+      this.setSkin          ("light");
+      this.enableTooltips   ("true,true,true,true");
+      this.enableResizing   ("false,false,false,false");
+      this.enableMultiselect(0);
+      this.init ();
+
+      this.addRow(this.uid(), "00.01.04, 21.04.2017, &bull;&nbsp; Bugfix grid callback                             ,                         ");
+      this.addRow(this.uid(), "00.01.03, 20.02.2017, &bull;&nbsp; Random acknowledge error                         ,                         ");
+      this.addRow(this.uid(), "00.01.02, 17.02.2017, &bull;&nbsp; Action commands and acknowledges revised         ,                         ");
+      this.addRow(this.uid(), "00.01.01, 24.01.2017, &bull;&nbsp; Possibility to open tool description from script ,                         ");
+      this.addRow(this.uid(), "00.01.00, 20.01.2017, &bull;&nbsp; Initial version                                  , New &quot;icom.dll&quot;");
+    }
+    /* ]]> */
+  </script>
+  
+  <!-- Visualize WAITING FOR COMMANDS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <script language="JScript" type="text/javascript">
+    /* <![CDATA[ */  
+    var ji = new Object();
+    ji.MakeERunVisible = function ()
+    {
+      document.all.WaitCommand.filters.blendTrans.Apply();
+      document.all.WaitCommand.style.visibility = "visible";
+      document.all.WaitCommand.filters.blendTrans.Play();
+    }
+    ji.MakeERunHidden = function ()
+    {
+      document.all.WaitCommand.filters.blendTrans.Apply();
+      document.all.WaitCommand.style.visibility = "hidden";
+      document.all.WaitCommand.filters.blendTrans.Play();
+    }
+    /* ]]> */
+  </script>
+
+</HTML>
+

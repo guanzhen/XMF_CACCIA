@@ -1,0 +1,15 @@
+Configversion V1.00
+COM10
+115200
+False
+1
+8
+D:\__Tmp\FEEDER_L0130001.hex
+0
+0
+0
+0x0000
+0x10000
+APPLICATION
+3
+9

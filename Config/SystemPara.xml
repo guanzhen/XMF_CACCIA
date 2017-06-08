@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+  <rows parent="0"> 
+    <!-- Head ___________________________________________________________________________________-->
+    <row id="COM_DEV" open="0">
+      <cell image="folder.gif" style="color:blue;font-weight:bold;font-size:7pt">COM</cell>
+        <row id="COM_No">
+          <cell image="Line3.gif" style="color:#007050;font-size:7pt;">Device Number</cell>
+          <cell style="color:#303030;font-size:7pt;">COM1</cell>
+        </row>
+        <row id="COM_Baud">
+          <cell image="Line3.gif" style="color:#007050;font-size:7pt;">Baudrate</cell>
+          <cell style="color:#303030;font-size:7pt;">115200</cell>
+        </row>
+        <row id="COM_Par">
+          <cell image="Line3.gif" style="color:#007050;font-size:7pt;">Parity</cell>
+          <cell style="color:#303030;font-size:7pt;">False</cell>
+        </row>
+        <row id="COM_StpB">
+          <cell image="Line3.gif" style="color:#007050;font-size:7pt;">Stop Bits</cell>
+          <cell style="color:#303030;font-size:7pt;">1</cell>
+        </row>
+        <row id="COM_DataB">
+          <cell image="Line2.gif" style="color:#007050;font-size:7pt;">Data Bits</cell>
+          <cell style="color:#303030;font-size:7pt;">8</cell>
+        </row>
+    </row>
+  </rows> 
+    
+    
