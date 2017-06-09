@@ -15,6 +15,7 @@ Option Explicit
 #include <System.bas>
 #include <stdlib.bas>
 #include <GridCtrl.bas>
+#include "DebugLog.bas"
 #include "tools.bas"
 #include "MF_Const.bas"
 #include "Com.bas"

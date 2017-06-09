@@ -50,6 +50,7 @@ Sub OnLoadFrame()
   InitSerialScope
   InitHexEditCtrl
   
+  CreateDebugLogWindow()
 End Sub
 
 Sub OnUnloadFrame()
@@ -60,7 +61,7 @@ Sub OnUnloadFrame()
   If configLoaded = True Then
     WriteConfigParam
   End If
-
+  DebugWindowClose
 End Sub
 
 
