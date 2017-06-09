@@ -157,7 +157,8 @@ Sub OnClick_BUTTON_STARTREC(Reason)
                   Dim hlp,hlp1
                   For x = 2 to sLendata+1
                     hlp = ackNode(i).ChildContent(x)
-                    cs = String.SafeParse(ackNode(i).Child(x).Attributes("colspan"), 0)                    
+                    DebugMessage "hlp = " & hlp
+                    cs = String.SafeParse(ackNode(i).Child(x).Attribute.ItemContent("colspan"), 0)                    
                     DebugMessage "x =" & x &" " &cs
                     If cs > 0 Then
                       If InStr(1,hlp,"x",1) = 0 Then
