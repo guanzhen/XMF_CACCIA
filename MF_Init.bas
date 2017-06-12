@@ -50,7 +50,7 @@ Sub OnLoadFrame()
   InitSerialScope
   InitHexEditCtrl
   
-  CreateDebugLogWindow()
+  'CreateDebugLogWindow()
 End Sub
 
 Sub OnUnloadFrame()
