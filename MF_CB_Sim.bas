@@ -31,21 +31,26 @@ Sub sendCommand (cmdIndex)
       If InStr(1,hlp,"x",1) = 0 Then
         hlp1 = Math.CastFloat2Long(String.SafeParse(hlp, 0.0))
       else
-        hlp1 = String.safeParse(hlp,0)
+        hlp1 = String.safeParse(hlp,0)        
       End If
+      DebugMessage "hlp11=" & hlp1
       for x = 0 to cs-1
         senddata(i+x) = Lang.GetByte(hlp1,x)
       Next
       i = i + cs-1
     Else
       hlp1 = Visual.Script("CommandTableGrid").getVal(cmdIndex,i+1)
-      If Lang.IsNumeric(hlp1) = True Then
+      DebugMessage "hlp12=" & hlp1
+      'Bug in IsNumeric function: it cannot detect 'L'
+      If (Lang.IsNumeric(hlp1) = True) AND NOT (hlp1 = "L") Then
+        DebugMessage "hlp12=num"
         senddata(i) = String.SafeParse ( Visual.Script("CommandTableGrid").getVal(cmdIndex,i+1), 0)
         senddata(i) = Lang.GetByte(senddata(i),0)
       Else
         senddata(i) = Asc(Visual.Script("CommandTableGrid").getVal(cmdIndex,i+1))
       End If
     End If
+    DebugMessage "sendata(i)=" & senddata(i)
   Next
   ClearComInputbuffer
   sendComMessage sendData , dataLen

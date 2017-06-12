@@ -171,7 +171,8 @@ Sub OnClick_BUTTON_STARTREC(Reason)
                       Next
                       x = x + cs-1
                     Else
-                      If Lang.IsNumeric(hlp) = True Then
+                      'Bug in IsNumeric function: it cannot detect 'L'
+                      If (Lang.IsNumeric(hlp) = True) AND NOT (hlp = "L") Then
                         hlp1 = String.SafeParse(hlp, 0)
                         If hlp1 < 0 Then
                           senddata(x-2) = Lang.GetByte(hlp1,0)
