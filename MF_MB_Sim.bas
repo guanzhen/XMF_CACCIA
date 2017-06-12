@@ -144,17 +144,22 @@ Sub OnClick_BUTTON_STARTREC(Reason)
             xmlOk = Lang.IsObject(ackNode)
             If xmlOk = True Then
               For i = 0 to ackNode.Size-1
+                DebugMessage "Node:" & i
                 If ackNode(i).ChildContent(0) = cmd Then
+                  DebugMessage "Cmd = " & cmd
                   If ackNode(i).ChildContent(1) > 0 Then
                     ' Delay
                     System.Delay ackNode(i).ChildContent(1)
                   End If
                   sLendata = 2 + String.SafeParse(ackNode(i).ChildContent(3), 0)
+                  DebugMessage "Sendlen = " & sLendata
                   ReDim senddata(sLendata+2)
                   Dim hlp,hlp1
                   For x = 2 to sLendata+1
                     hlp = ackNode(i).ChildContent(x)
-                    cs = String.SafeParse(ackNode(i).Child(x).Attributes("colspan"), 0)
+                    DebugMessage "hlp = " & hlp
+                    cs = String.SafeParse(ackNode(i).Child(x).Attribute.ItemContent("colspan"), 0)                    
+                    DebugMessage "x =" & x &" " &cs
                     If cs > 0 Then
                       If InStr(1,hlp,"x",1) = 0 Then
                         hlp1 = Math.CastFloat2Long(String.SafeParse(hlp, 0.0))
@@ -166,7 +171,8 @@ Sub OnClick_BUTTON_STARTREC(Reason)
                       Next
                       x = x + cs-1
                     Else
-                      If Lang.IsNumeric(hlp) = True Then
+                      'Bug in IsNumeric function: it cannot detect 'L'
+                      If (Lang.IsNumeric(hlp) = True) AND NOT (hlp = "L") Then
                         hlp1 = String.SafeParse(hlp, 0)
                         If hlp1 < 0 Then
                           senddata(x-2) = Lang.GetByte(hlp1,0)

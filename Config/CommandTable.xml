@@ -1,267 +1,182 @@
-<?xml version="1.0"?>
-
-  <rows parent="0"> 
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD GETVERSION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_GETVERSION">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00:       Target"
-      >DOWNLOAD_VERSION</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x05</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>1</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell xmlcontent="true">0x20
-        <option value="1">0x20</option>
-        <option value="2">0x30</option>
-      </cell>
-    </row>
-    
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD RESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_RESET">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell
-      >RESET</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x06</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- Test co ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_GET_MEMORY_STRUCT">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell
-      >GET_MEMORY_STRUCTURE</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x07</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD SELFTEST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_SELFTEST">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00:       Contact module id 1-3"
-      >SELFTEST</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x41</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>1</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell style="color:#101010;font-size:7pt;">3</cell>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD CALIBRATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_CALIB">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell 
-      >CALIBRATION</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x42</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD PREPARE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_PREP_MEAS">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00:       Contact module id 1-3
-       Para 01:       Component type C-R-D-L
-       Para 02-05: Expected result 
-      "
-      >PREPARE_MEASURE</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x43</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>6</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>2</cell>
-      <cell>C</cell>
-      <cell colspan="4">2.456</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell/>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD START MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_START_MEAS">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00:       Component type C-R-L
-       Para 01:       Resistor measurement type S-P
-       Para 02-05: Expected result
-      "
-      >START_MEASURE</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x44</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>6</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>L</cell>
-      <cell>S</cell>
-      <cell colspan="4">0.564</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD START AUTORANGE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_START_AUTORANGE_MEAS">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00:       Component type C-R-L
-      "
-      >START_AUTORANGE_MEASURE</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x45</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>1</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>R</cell>
-    </row>
-    
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD START AUTOPOLARITY MEASURE D ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_START_AUTOPOL_MEAS_D">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00-03: Forward voltage 
-      "
-      >START_AUTOPOLARITY_D</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x46</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>4</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell colspan="4">0.17666</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD START AUTOPOLARITY MEASURE C ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_START_AUTOPOL_MEAS_C">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00-03: Nominal component voltage
-       Para 04-07: Nominal component capacity
-      "
-      >START_AUTOPOLARITY_C</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x47</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>8</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell colspan="4">44.765</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">0.00000006</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD START AUTODETECT MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_START_AUTODETECT_MEAS">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell 
-      >START_AUTODETECT</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x48</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD START FORWARD VOLTAGE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_START_FOREWARD_VOLTAGE_MEAS">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00-03: Nominal current (I_measure)
-       Para 04-07: Max. voltage (V_max)
-      "
-      >START_FORWARD_VOLTAGE</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x49</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>8</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell colspan="4">3.7654</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">5.000</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD SENSOR PERIPHERY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_PERIPHERIE">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00: Parameter index
-      "
-      >GET_PERIPHERY</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x6E</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>1</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>01</cell>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- CMD GET DATA ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="CMD_GET_DATA">
-      <!-- Command and command description ~~~~~~~~~~~~~~-->
-      <cell title = 
-      "       Para 00: Parameter index
-      "
-      >GET_DATA</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x6A</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>1</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>77</cell>
-    </row>
-  </rows> 
-    
-    
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rows parent="0">
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD GETVERSION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_GETVERSION">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell title="       Para 00:       Target">DOWNLOAD_VERSION</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x05</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>1</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell xmlcontent="true">0x20
+        <option value="1">0x20</option><option value="2">0x30</option></cell>
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD RESET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_RESET">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell>RESET</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x06</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- Test co ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_GET_MEMORY_STRUCT">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell>GET_MEMORY_STRUCTURE</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x07</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD SELFTEST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_SELFTEST">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell title="       Para 00:       Contact module id 1-3">SELFTEST</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x41</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>1</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell style="color:#101010;font-size:7pt;">3</cell>
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD CALIBRATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_CALIB">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell>CALIBRATION</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x42</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD PREPARE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_SETUP_MEAS">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell title="       Para 00:       Contact module id 1-3        Para 01:       Component type C-R-D-L        Para 02-05: Expected result        ">SETUP_MEASURE</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x43</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>6</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>2</cell>
+    <cell>C</cell>
+    <cell colspan="4">2.456</cell>
+    <cell />
+    <cell />
+    <cell />
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD START MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_START_MEAS">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell title="       Para 00:       Component type C-R-L        Para 01-04:      Para 05: Number of cycles       ">START_MEASURE</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x44</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>6</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>C</cell>
+    <cell colspan="4">0.564</cell>
+    <cell />
+    <cell />
+    <cell />
+    <cell>250</cell>    
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD START AUTOPOLARITY MEASURE C ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_START_AUTOPOL_MEAS_C">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell title="       Para 00: Polarity         Para 01-04: Nominal component voltage        Para 05-08: Nominal component capacity       ">START_AUTOPOLARITY_C</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x47</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>9</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0</cell>
+    <cell colspan="4">44.765</cell>
+    <cell />
+    <cell />
+    <cell />
+    <cell colspan="4">0.00000006</cell>
+    <cell />
+    <cell />
+    <cell />
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD START AUTODETECT MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_START_AUTODETECT_MEAS">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell>START_AUTODETECT</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x48</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD START FORWARD VOLTAGE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_START_FOREWARD_VOLTAGE_MEAS">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell title="       Para 00: Polarity         Para 01-04: Nominal current (I_measure)        Para 05-08  Max. voltage (V_max)       ">START_FORWARD_VOLTAGE</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x49</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>9</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0</cell>
+    <cell colspan="4">3.7654</cell>
+    <cell />
+    <cell />
+    <cell />
+    <cell colspan="4">5.000</cell>
+    <cell />
+    <cell />
+    <cell />
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD SENSOR PERIPHERY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_PERIPHERIE">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell title="       Para 00: Parameter index       ">GET_PERIPHERY</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x6E</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>1</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>01</cell>
+  </row>
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!-- CMD GET DATA ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+  <row id="CMD_GET_DATA">
+    <!-- Command and command description ~~~~~~~~~~~~~~-->
+    <cell title="       Para 00: Parameter index       ">GET_DATA</cell>
+    <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>0x6A</cell>
+    <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>1</cell>
+    <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <cell>77</cell>
+  </row>
+</rows>

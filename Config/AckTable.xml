@@ -119,19 +119,41 @@
     </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- ACK PREPARE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- ACK SETUP MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="ACK_PREP_MEAS">
+    <row id="ACK_SETUP_MEAS">
       <cell
-      >PREPARE_MEASURE</cell>
+      >SETUP_MEASURE</cell>
       <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>10</cell>
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x43</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>1</cell>
+      <cell>22</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
+      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <cell>C</cell>
+      <cell colspan="4">0.000005</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">24.67</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">0.005</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">90.01</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">50000.0</cell>    
+      <cell/>
+      <cell/>
+      <cell/>  
     </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -148,71 +170,33 @@
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x44</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>9</cell>
+      <cell>22</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
       <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell colspan="4">0.000005</cell>
+      <cell>C</cell>
+      <cell colspan="4">0.000006</cell>
       <cell/>
       <cell/>
       <cell/>
-      <cell colspan="4">22.99</cell>
+      <cell colspan="4">23.45</cell>
       <cell/>
       <cell/>
       <cell/>
+      <cell colspan="4">0.006</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">97.12</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">60000.0</cell>    
+      <cell/>
+      <cell/>
+      <cell/>  
     </row>
 
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- ACK START AUTORANGE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="ACK_START_AUTORANGE_MEAS">
-      <cell title = 
-      "       Data 00-03: Capacity or inductivity result
-       Data 04-07: Resistance result
-      "
-      >START_AUTORANGE_MEASURE</cell>
-      <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>10</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x45</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>9</cell>
-      <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell colspan="4">0.0543</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">44.323</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- ACK START AUTOPOLARITY MEASURE D ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="ACK_START_AUTOPOLARITY_MEAS_D">
-      <cell title = 
-      "       Data 00-03: Forward voltage
-      "
-      >START_AUTOPOLARITY_D</cell>
-      <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>10</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x46</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>5</cell>
-      <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell colspan="4">3.46935</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-    </row>
-    
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!-- ACK START AUTOPOLARITY MEASURE C ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -226,14 +210,31 @@
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x47</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>5</cell>
+      <cell>22</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
       <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell colspan="4">-0.00008934</cell>
+      <cell>C</cell>
+      <cell colspan="4">0.000008</cell>
       <cell/>
       <cell/>
       <cell/>
+      <cell colspan="4">28.43</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">0.003</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">25.22</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">85000.1</cell>    
+      <cell/>
+      <cell/>
+      <cell/>  
     </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -250,18 +251,31 @@
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x48</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>9</cell>
+      <cell>22</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
       <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell colspan="4">0.00000000345</cell>
+      <cell>R</cell>
+      <cell colspan="4">0.000002</cell>
       <cell/>
       <cell/>
       <cell/>
-      <cell colspan="4">0.87654321</cell>
+      <cell colspan="4">12.45</cell>
       <cell/>
       <cell/>
       <cell/>
+      <cell colspan="4">0.007</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">35.21</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">67000.0</cell>    
+      <cell/>
+      <cell/>
+      <cell/>  
     </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -277,11 +291,15 @@
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x49</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>5</cell>
+      <cell>9</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
       <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell colspan="4">2.987</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">0.0012</cell>
       <cell/>
       <cell/>
       <cell/>

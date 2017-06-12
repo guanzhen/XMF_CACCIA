@@ -33,7 +33,7 @@
         <Line byteIndex="0" format="x"   >CALIBRATION</Line>
       </cmd>
       <cmd>
-        <Line byteIndex="0" format="x"   >PREPARE_MEASURE</Line>
+        <Line byteIndex="0" format="x"   >SETUP_MEASURE</Line>
         <Line byteIndex="2" format="c"   >CONTACT_MODULE</Line>
         <Line byteIndex="3" format="a"   >COMPONENT_TYPE</Line>
         <Line byteIndex="4" format="f"   >EXPECTED_RESULT</Line>
@@ -41,29 +41,23 @@
       <cmd>
         <Line byteIndex="0" format="x"   >START_MEASURE</Line>
         <Line byteIndex="2" format="a"   >COMPONENT_TYPE</Line>
-        <Line byteIndex="3" format="a"   >RESISTANCE_TYPE</Line>
-        <Line byteIndex="4" format="e"   >EXPECTED_RESULT</Line>
+        <Line byteIndex="3" format="f"   >EXPECTED_RESULT</Line>
+        <Line byteIndex="7" format="c"   >MEASUREMENT_CYCLES</Line>
       </cmd>
       <cmd>
-        <Line byteIndex="0" format="x"   >START_AUTORANGE_MEASURE</Line>
-        <Line byteIndex="2" format="a"   >COMPONENT_TYPE</Line>
-      </cmd>
-      <cmd>
-        <Line byteIndex="0" format="x"   >START_AUTOPOLARITY_D</Line>
-        <Line byteIndex="2" format="e"   >FORWARD_VOLTAGE</Line>
-      </cmd>
-      <cmd>
-        <Line byteIndex="0" format="x"   >START_AUTOPOLARITY_C</Line>
-        <Line byteIndex="2" format="f"   >NOMINAL_VOLTAGE</Line>
-        <Line byteIndex="6" format="f"   >NOMINAL_CAPACITY</Line>
+        <Line byteIndex="0" format="x"   >START_AUTOPOLARITY_C</Line>        
+        <Line byteIndex="2" format="c"   >POLARITY</Line>
+        <Line byteIndex="3" format="f"   >NOMINAL_VOLTAGE</Line>
+        <Line byteIndex="7" format="f"   >NOMINAL_CAPACITY</Line>
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >START_AUTODETECT</Line>
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >START_FORWARD_VOLTAGE</Line>
-        <Line byteIndex="2" format="f"   >NOMINAL_CURRENT</Line>
-        <Line byteIndex="6" format="f"   >MAX_VOLTAGE</Line>
+        <Line byteIndex="2" format="c"   >POLARITY</Line>
+        <Line byteIndex="3" format="f"   >NOMINAL_CURRENT</Line>
+        <Line byteIndex="7" format="f"   >MAX_VOLTAGE</Line>
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >GET_PERIPHERY</Line>
@@ -108,49 +102,58 @@
       </ack>
       <ack>
         <Line byteIndex="0" format="x"    >CALIBRATION</Line>
-        <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="2" format="state">STATE</Line>        
       </ack>
       <ack>
-        <Line byteIndex="0" format="x"    >PREPARE_MEASURE</Line>
+        <Line byteIndex="0" format="x"    >SETUP_MEASURE</Line>
         <Line byteIndex="2" format="state">STATE</Line>
+        <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
+        <Line byteIndex="4" format="f"    >CAPACITY</Line>        
+        <Line byteIndex="8" format="f"    >VOLTAGE_RESULT</Line>
+        <Line byteIndex="12" format="f"   >CURRENT_RESULT</Line>
+        <Line byteIndex="16" format="f"   >PHASESHIFT</Line>
+        <Line byteIndex="20" format="f"   >FREQUENCY</Line>
       </ack>
       <ack>
         <Line byteIndex="0" format="x"    >START_MEASURE</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="f"    >CAPACITY</Line>
-        <Line byteIndex="7" format="f"    >RESISTOR</Line>
+        <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
+        <Line byteIndex="4" format="f"    >CAPACITY</Line>        
+        <Line byteIndex="8" format="f"    >VOLTAGE_RESULT</Line>
+        <Line byteIndex="12" format="f"    >CURRENT_RESULT</Line>
+        <Line byteIndex="16" format="f"    >PHASESHIFT</Line>
+        <Line byteIndex="20" format="f"    >FREQUENCY</Line>
       </ack>
-      <ack>
-        <Line byteIndex="0" format="x"    >START_AUTORANGE_MEASURE</Line>
-        <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="f"    >C or L Result</Line>
-        <Line byteIndex="7" format="f"    >RESISTANCE</Line>
-      </ack>
-      <ack>
-        <Line byteIndex="0" format="x"    >START_AUTOPOLARITY_D</Line>
-        <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="f"    >FORWARD VOLTAGE</Line>
-      </ack>      
       <ack>
         <Line byteIndex="0" format="x"    >START_AUTOPOLARITY_C</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="f"    >CAPACITY</Line>
+        <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
+        <Line byteIndex="4" format="f"    >CAPACITY</Line>        
+        <Line byteIndex="8" format="f"    >VOLTAGE_RESULT</Line>
+        <Line byteIndex="12" format="f"    >CURRENT_RESULT</Line>
+        <Line byteIndex="16" format="f"    >PHASESHIFT</Line>
+        <Line byteIndex="20" format="f"    >FREQUENCY</Line>
       </ack>      
       <ack>
         <Line byteIndex="0" format="x"    >START_AUTODETECT</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="e"    >C or L RESULT</Line>
-        <Line byteIndex="7" format="e"    >RESISTANCE</Line>
+        <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
+        <Line byteIndex="4" format="f"    >CAPACITY</Line>        
+        <Line byteIndex="8" format="f"    >VOLTAGE_RESULT</Line>
+        <Line byteIndex="12" format="f"    >CURRENT_RESULT</Line>
+        <Line byteIndex="16" format="f"    >PHASESHIFT</Line>
+        <Line byteIndex="20" format="f"    >FREQUENCY</Line>
       </ack>      
       <ack>
         <Line byteIndex="0" format="x"    >START_FORWARD_VOLTAGE</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="e"    >VOLTAGE_RESULT</Line>
+        <Line byteIndex="3" format="f"    >VOLTAGE_RESULT</Line>
+        <Line byteIndex="7" format="f"    >CURRENT_RESULT</Line>
       </ack>      
       <ack>
         <Line byteIndex="0" format="x"    >GET_PERIPHERY</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="x2"   >VALUE</Line>
+        <Line byteIndex="3" format="s"   >VALUE</Line>
       </ack>      
       <ack>
         <Line byteIndex="0" format="x"    >GET_DATA</Line>
