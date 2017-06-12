@@ -153,7 +153,7 @@
       <ack>
         <Line byteIndex="0" format="x"    >GET_PERIPHERY</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="x2"   >VALUE</Line>
+        <Line byteIndex="3" format="s"   >VALUE</Line>
       </ack>      
       <ack>
         <Line byteIndex="0" format="x"    >GET_DATA</Line>

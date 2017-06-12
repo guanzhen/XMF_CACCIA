@@ -95,7 +95,7 @@ Function wait4Ack (mode, expAckLen, byRef ackData)
       For i = dataLen-1 to 11
         Visual.Script("AckTableGrid").setVal 0,i+1," "
       Next
-      Visual.Script("AckTableGrid").setVal 0,12,String.Format("0x%02X",recData(dataLen-1))
+      Visual.Script("AckTableGrid").setVal 0,25,String.Format("0x%02X",recData(dataLen-1))
       Visual.Script("AckTableGrid").SelectRow 0
       If Not Lang.LoByte(cs) = recData(dataLen-1) Then
         Visual.Script("AckTableGrid").setVal 0,0, "Wrong CS - " & String.Format("0x%02X",Lang.LoByte(cs)) & " expected"
