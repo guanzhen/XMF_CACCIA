@@ -42,7 +42,7 @@
         <Line byteIndex="0" format="x"   >START_MEASURE</Line>
         <Line byteIndex="2" format="a"   >COMPONENT_TYPE</Line>
         <Line byteIndex="3" format="f"   >EXPECTED_RESULT</Line>
-        <Line byteIndex="7" format="e"   >MEASUREMENT_CYCLES</Line>
+        <Line byteIndex="7" format="c"   >MEASUREMENT_CYCLES</Line>
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >START_AUTOPOLARITY_C</Line>        
