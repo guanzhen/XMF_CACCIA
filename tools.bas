@@ -126,6 +126,7 @@ Function ConvertValue (node, index, line, gridObj)
   col = CInt(node.Child(index).Attribute.Attribute("byteIndex")) + 1
   Select case node.Child(index).Attribute.Attribute("format")
     case "state" ConvertValue = decodeAckState(gridObj.getVal(line,col))
+    case "c"     ConvertValue = gridObj.getVal(line,col)
     case "x"     ConvertValue = gridObj.getVal(line,col)
     case "a"     ConvertValue = String.Format( "%c", String.SafeParse(gridObj.getVal(line,col),0 ) )
     case "s"     ConvertValue = Lang.MakeWord( String.SafeParse(gridObj.getVal(line,col),0) , _
