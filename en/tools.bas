@@ -131,17 +131,17 @@ Function ConvertValue (node, index, line, gridObj)
     case "a"     ConvertValue = String.Format( "%c", String.SafeParse(gridObj.getVal(line,col),0 ) )
     case "s"     ConvertValue = Lang.MakeWord( String.SafeParse(gridObj.getVal(line,col),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+1),0) )
-    case "exp"   ConvertValue = "E" & String.Format("%+03d",Math.Cast2Byte(String.SafeParse(gridObj.getVal(line,col),0) ) )
+    case "exp"   ConvertValue = "E" & String.Format("%+06G",Math.Cast2Byte(String.SafeParse(gridObj.getVal(line,col),0) ) )
     case "sl"    ConvertValue = Lang.MakeLong4(String.SafeParse(gridObj.getVal(line,col),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+1),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+2),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+3),0) )
-    case "f"     ConvertValue = String.Format("%f",Math.CastLong2Float(Lang.MakeLong4( _
+    case "f"     ConvertValue = String.Format("%G",Math.CastLong2Float(Lang.MakeLong4( _
                                                String.SafeParse(gridObj.getVal(line,col),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+1),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+2),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+3),0) ) ) )
-    case "e"     ConvertValue = String.Format("%e",Math.CastLong2Float(Lang.MakeLong4( _
+    case "e"     ConvertValue = String.Format("%G",Math.CastLong2Float(Lang.MakeLong4( _
                                                String.SafeParse(gridObj.getVal(line,col),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+1),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+2),0) , _
