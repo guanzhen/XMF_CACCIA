@@ -1,5 +1,5 @@
 Configversion V1.00
-COM8
+COM3
 115200
 False
 1
@@ -12,4 +12,4 @@ D:\__Tmp\FEEDER_L0130001.hex
 0x10000
 APPLICATION
 3
-9
+12
