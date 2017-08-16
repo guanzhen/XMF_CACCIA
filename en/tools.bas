@@ -131,7 +131,7 @@ Function ConvertValue (node, index, line, gridObj)
     case "a"     ConvertValue = String.Format( "%c", String.SafeParse(gridObj.getVal(line,col),0 ) )
     case "s"     ConvertValue = Lang.MakeWord( String.SafeParse(gridObj.getVal(line,col),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+1),0) )
-    case "exp"   ConvertValue = "E" & String.Format("%+06G",Math.Cast2Byte(String.SafeParse(gridObj.getVal(line,col),0) ) )
+    case "exp"   ConvertValue = "E" & String.Format("%+G",Math.Cast2Byte(String.SafeParse(gridObj.getVal(line,col),0) ) )
     case "sl"    ConvertValue = Lang.MakeLong4(String.SafeParse(gridObj.getVal(line,col),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+1),0) , _
                                                String.SafeParse(gridObj.getVal(line,col+2),0) , _
