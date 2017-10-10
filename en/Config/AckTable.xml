@@ -126,7 +126,7 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <row id="ACK_SETUP_MEAS">
       <cell title =
-      "     Data 00-03: RESISTOR_CONTACT1_2
+      "       Data 00-03: RESISTOR_CONTACT1_2
        Data 04-07: CAPACITY_CM_ID
        Data 08-11: RESISTANCE_CM_ID
        Data 12-15: Voltage
@@ -231,7 +231,15 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <row id="ACK_START_AUTOPOLARITY_MEAS_C">
       <cell title = 
-      "       Data 00-03: Capacity"
+      "       Data 00: Comp Type1
+       Data 01-04: Comp Value1
+       Data 05: Comp Type2
+       Data 06-09 Comp Value2
+       Data 10-13: Voltage
+       Data 14-17: Current
+       Data 18-21: Phase
+       Data 22-25: Frequency
+       "
       >START_AUTOPOLARITY_C</cell>
       <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>10</cell>
@@ -276,6 +284,7 @@
     <row id="ACK_START_FORWARDVOLTAGE_MEAS">
       <cell title = 
       "       Data 00-03: Voltage result
+      Data 04-07: Current Result
       "
       >START_FORWARD_VOLTAGE</cell>
       <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

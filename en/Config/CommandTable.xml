@@ -5,7 +5,7 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_GETVERSION">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00:       Target">DOWNLOAD_VERSION</cell>
+    <cell title="    Para 00: Target">DOWNLOAD_VERSION</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x05</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -31,7 +31,7 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_SELFTEST">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00:       Contact module id 1-3">SELFTEST</cell>
+    <cell title="       Para 00: Contact module id [1-3]">SELFTEST</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x41</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -45,7 +45,7 @@
   <row id="CMD_CALIB">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
     <cell title = 
-    "Para 00: Contact module id 1-3
+    "    Para 00: Contact module id [1-3]
     Para 01: Subcommand 
     "
     >CALIBRATION</cell>
@@ -63,12 +63,12 @@
   <row id="CMD_SETUP_MEAS">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
     <cell title=
-    "     Para 00:       Contact module id 1-3
-    Para 01:       Component type C-R-D-L
+    "    Para 00: Contact module id [1-3]
+    Para 01: Component type [C,R,D,L]
     Para 02-05: Expected result
-    Para 06:ModeSel 
-      Bit[0:1](Model): 00_Auto 01_Serial 10_Parallel 
-      Bit[2:3](Freq):00_Auto 01_1kHz 10_10kHz
+    Para 06: ModeSel 
+      Bit[0:1](Model): [00]Auto [01]Serial [10]Parallel 
+      Bit[2:3](Freq): [00]Auto [01]1kHz [10]10kHz
       "
       >SETUP_MEASURE</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -89,12 +89,12 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_START_MEAS">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="     Para 00:       Component type C-R-L        
+    <cell title="    Para 00: Component type [C,R,L]        
     Para 01-04: Expected result
-    Para 05: Number of cycles        
-    Para 06:ModeSel 
-      Bit[0:1](Model): 00_Auto 01_Serial 10_Parallel 
-      Bit[2:3](Freq):00_Auto 01_1kHz 10_10kHz
+    Para 05: Number of cycles [0-250]       
+    Para 06: ModeSel 
+      Bit[0:1](Model): [00]Auto [01]Serial [10]Parallel 
+      Bit[2:3](Freq): [00]Auto [01]1kHz [10]10kHz
     "
     >START_MEASURE</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -115,7 +115,7 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_START_AUTOPOL_MEAS_C">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00: Polarity         
+    <cell title="    Para 00: Polarity [0]Normal [1]Inverted        
     Para 01-04: Nominal component voltage        
     Para 05-08: Nominal component capacity       
     "
@@ -140,9 +140,9 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_START_FORWARD_VOLTAGE_MEAS">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00: Polarity         
+    <cell title="    Para 00: Polarity [0]Normal [1]Inverted         
     Para 01-04: Nominal current (I_measure)        
-    Para 05-08  Max. voltage (V_max)       
+    Para 05-08: Max. voltage (V_max)       
     "
     >START_FORWARD_VOLTAGE</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -165,7 +165,7 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_PERIPHERIE">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00: Parameter index       ">GET_PERIPHERY</cell>
+    <cell title="    Para 00: Parameter index       ">GET_PERIPHERY</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x6E</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -178,7 +178,7 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_GET_DATA">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00: Parameter index       ">GET_DATA</cell>
+    <cell title="    Para 00: Parameter index       ">GET_DATA</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x6A</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
