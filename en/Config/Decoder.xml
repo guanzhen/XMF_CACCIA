@@ -23,9 +23,6 @@
         <Line byteIndex="0" format="x"   >RESET</Line>
       </cmd>
       <cmd>
-        <Line byteIndex="0" format="x"   >GET_MEMORY_STRUCTURE</Line>
-      </cmd>
-      <cmd>
         <Line byteIndex="0" format="x"   >SELFTEST</Line>
         <Line byteIndex="2" format="c"   >CONTACT_MODULE</Line>
       </cmd>
@@ -49,9 +46,6 @@
         <Line byteIndex="2" format="c"   >POLARITY</Line>
         <Line byteIndex="3" format="f"   >NOMINAL_VOLTAGE</Line>
         <Line byteIndex="7" format="f"   >NOMINAL_CAPACITY</Line>
-      </cmd>
-      <cmd>
-        <Line byteIndex="0" format="x"   >START_AUTODETECT</Line>
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >START_FORWARD_VOLTAGE</Line>
@@ -87,14 +81,6 @@
         <Line byteIndex="2" format="state">STATE</Line>
       </ack>
       <ack>
-        <Line byteIndex="0" format="x"   >GET_MEMORY_STRUCTURE</Line>
-        <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="x"   >TARGET ID 1</Line>
-        <Line byteIndex="4" format="x"   >TARGET ID 2</Line>
-        <Line byteIndex="5" format="x"   >TARGET ID 3</Line>
-        <Line byteIndex="6" format="x"   >TARGET ID 4</Line>
-      </ack>
-      <ack>
         <Line byteIndex="0" format="x"    >SELFTEST</Line>
         <Line byteIndex="2" format="state">STATE</Line>
         <Line byteIndex="3" format="f"    >RESISTOR_CANTACT1_2</Line>
@@ -126,16 +112,6 @@
       </ack>
       <ack>
         <Line byteIndex="0" format="x"    >START_AUTOPOLARITY_C</Line>
-        <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
-        <Line byteIndex="4" format="f"    >CAPACITY</Line>        
-        <Line byteIndex="8" format="f"    >VOLTAGE_RESULT</Line>
-        <Line byteIndex="12" format="f"    >CURRENT_RESULT</Line>
-        <Line byteIndex="16" format="f"    >PHASESHIFT</Line>
-        <Line byteIndex="20" format="f"    >FREQUENCY</Line>
-      </ack>      
-      <ack>
-        <Line byteIndex="0" format="x"    >START_AUTODETECT</Line>
         <Line byteIndex="2" format="state">STATE</Line>
         <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
         <Line byteIndex="4" format="f"    >CAPACITY</Line>        
