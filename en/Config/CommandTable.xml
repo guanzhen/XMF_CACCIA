@@ -67,8 +67,9 @@
     Para 01: Component type [C,R,D,L]
     Para 02-05: Expected result
     Para 06: ModeSel 
-      Bit[0:1](Model): [00]Auto [01]Serial [10]Parallel 
+      Bit[7:4](Reserved): 0
       Bit[2:3](Freq): [00]Auto [01]1kHz [10]10kHz
+      Bit[0:1](Model): [00]Auto [01]Serial [10]Parallel 
       "
       >SETUP_MEASURE</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -93,8 +94,9 @@
     Para 01-04: Expected result
     Para 05: Number of cycles [0-250]       
     Para 06: ModeSel 
-      Bit[0:1](Model): [00]Auto [01]Serial [10]Parallel 
+      Bit[7:4](Reserved): 0
       Bit[2:3](Freq): [00]Auto [01]1kHz [10]10kHz
+      Bit[0:1](Model): [00]Auto [01]Serial [10]Parallel 
     "
     >START_MEASURE</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
