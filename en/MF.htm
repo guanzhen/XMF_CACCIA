@@ -486,25 +486,40 @@
       this.selMultiRows = true;
       this.imgURL = "../../../codebase/grid/imgs/icons_greenfolders/";
       this.setHeader("Acknowledge,Cmd,Len,State,"+
-                        "Data0,Data1,Data2,Data3,Data4,Data5,Data6,Data7,Data8,Data9,Data10,"+
-                        "Data11,Data12,Data13,Data14,Data15,Data16,Data17,Data18,Data19,Data20,CS",null,
+                        "Data0,Data1,Data2,Data3,Data4,Data5,Data6,Data7,Data8,Data9,"+
+                        "Data10,Data11,Data12,Data13,Data14,Data15,Data16,Data17,Data18,Data19,"+
+                        "Data20,Data21,Data22,Data23,Data24,Data25,Data26,Data27,CS",null,
                         ["font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
                         "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
                         "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
                         "font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt",
-                        "font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt"]);
+                        "font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt",
+                        "font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt",
+                        "font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt","font-size:7pt;margin-left:0pt"]);
   
-      this.setInitWidths ("152,46,40,46,46,46,46,46,46,46,46,46,46,46,50,50,50,50,50,50,50,50,50,50,50,50,50");
-      this.setColAlign   ("center,center,center,center,center,center,center,center,center,center,center,center,center,center,left,left,left,left,left,left,left,left,left,left,left,left,left,left");
-      this.setColTypes   ("ro,ed,ro,ro,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed");
-      this.setColSorting ("na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na,na");
+      this.setInitWidths ("152,46,40,46,46,46,46,46,46,46,"+
+                          "46,46,46,46,50,50,50,50,50,50,"+
+                          "50,50,50,50,50,50,50,50,50,50,"+
+                          "50,50,50");
+      this.setColAlign   ("center,center,center,center,center,center,center,center,center,center,"+
+                          "center,center,center,center,left,left,left,left,left,left,"+
+                          "left,left,left,left,left,left,left,left,left,left,"+
+                          "left,left,left");
+      this.setColTypes   ("ro,ed,ro,ro,ed,ed,ed,ed,ed,ed,"+
+                          "ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,"+
+                          "ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,"+
+                          "ed,ed,ed");
+      this.setColSorting ("na,na,na,na,na,na,na,na,na,na,"+
+                          "na,na,na,na,na,na,na,na,na,na,"+
+                          "na,na,na,na,na,na,na,na,na,na,"+
+                          "na,na,na");
       this.init();
       this.setSkin("modern");
       for (var i=0; i<8; i++)
       {
         this.addRow(this.uid(), " , , , , , , , , , , , , ");
         this.setCellTextStyle(this.getRowId(i),0,"font-family:arial; font-size:7pt;color:red;font-weight:bold");
-        for (var x=1;x<25;x++) { this.setCellTextStyle(this.getRowId(i),x,"font-size:7pt;color:#202020;"); }
+        for (var x=1;x<33;x++) { this.setCellTextStyle(this.getRowId(i),x,"font-size:7pt;color:#202020;"); }
       }
     }
     AckTableGrid.DelRow        = function (index)         { this.deleteRow(this.getRowId(index)); }
@@ -585,25 +600,32 @@
       this.selMultiRows = true;
       this.imgURL = "../../../codebase/grid/imgs/icons_greenfolders/";
       this.setHeader("Acknowledge,Delay,Cmd,Len,State,"+
-                        "Data0,Data1,Data2,Data3,Data4,Data5,Data6,Data7,Data8,Data9,Data10,"+
-                        "Data11,Data12,Data13,Data14,Data15,Data16,Data17,Data18,Data19,Data20",null,
+                        "Data0,Data1,Data2,Data3,Data4,Data5,Data6,Data7,Data8,Data9,"+
+                        "Data10,Data11,Data12,Data13,Data14,Data15,Data16,Data17,Data18,Data19,"+
+                        "Data20,Data21,Data22,Data23,Data24,Data25,Data26,Data27",null,
                         ["font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
                         "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
                         "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
                         "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
-                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;"]);
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;","font-size:7pt;",
+                        "font-size:7pt;","font-size:7pt;","font-size:7pt;"]);
       this.setInitWidths ("152,46,40,46,46,46,46,46,46,46,"+
                           "46,46,46,46,46,46,46,46,46,46,"+
-                          "46,46,46,46,46,46");
+                          "46,46,46,46,46,46,46,46,46,46,"+
+                          "46,46,46");
       this.setColAlign   ("left,center,center,center,center,center,center,center,center,center,"+
                           "center,center,center,center,center,center,center,center,center,center,"+
-                          "center,center,center,center,center,center");
+                          "center,center,center,center,center,center,center,center,center,center,"+
+                          "center,center,center");
       this.setColTypes   ("ro,ed,ro,ro,ed,ed,ed,ed,ed,ed,"+
                           "ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,"+
-                          "ed,ed,ed,ed,ed,ed");
+                          "ed,ed,ed,ed,ed,ed,ed,ed,ed,ed,"+
+                          "ed,ed,ed");
       this.setColSorting ("na,na,na,na,na,na,na,na,na,na,"+
                           "na,na,na,na,na,na,na,na,na,na,"+
-                          "na,na,na,na,na,na");
+                          "na,na,na,na,na,na,na,na,na,na,"+
+                          "na,na,na");
       this.init();
       this.enableColSpan(true);
       this.setSkin("dhx_web");
@@ -616,7 +638,7 @@
         this.setCellTextStyle(this.getRowId(i),1,"color:#101010;font-size:7pt;");
         this.setCellTextStyle(this.getRowId(i),2,"color:#101010;font-size:7pt;");
         this.setCellTextStyle(this.getRowId(i),3,"color:#101010;font-size:7pt;border-right:3px;border-right-color:#F86600; border-right-style:double");
-        for (var x=4; x<26;x++)
+        for (var x=4; x<33;x++)
         {
           if (this.cells(this.getRowId(i),x).getValue() == "")
             this.setCellTextStyle(this.getRowId(i),x,"background-color:#E8E8E8;");

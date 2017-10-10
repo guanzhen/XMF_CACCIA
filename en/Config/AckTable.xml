@@ -49,38 +49,17 @@
     </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- ACK GET MEMORY STRUCTURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="ACK_GETMEMORYSTRUCT">
-      <cell title = 
-      "       Data 00: Memory target id 1
-       Data 01: Memory target id 2
-       Data 02: Memory target id 3
-       Data 03: Memory target id 4
-       " 
-      >GET_MEMORY_STRUCTURE</cell>
-      <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>10</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x07</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>5</cell>
-      <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x10</cell>
-      <cell>0x20</cell>
-      <cell>0x21</cell>
-      <cell>0x22</cell>
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!-- ACK SELFTEST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <row id="ACK_SELFTEST">
       <cell title = 
       "       Data 00-03: RESISTOR_CONTACT1_2
-       Data 04-07: CAPACITY
+       Data 04-07: CAPACITY_CM_ID
+       Data 08-11: RESISTANCE_CM_ID
+       Data 12-15: Voltage
+       Data 16-19: Current
+       Data 20-23: Phase
+       Data 24-27: Frequency
        " 
       >SELFTEST</cell>      
       <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -88,7 +67,7 @@
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x41</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>9</cell>
+      <cell>29</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
       <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -100,21 +79,45 @@
       <cell/>
       <cell/>
       <cell/>
+      <cell colspan="4">1000.0</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">3.0</cell>
+      <cell/>
+      <cell/>
+      <cell/>      
+      <cell colspan="4">0.001</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">90.001</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">15000</cell>
+      <cell/>
+      <cell/>
+      <cell/>      
     </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!-- ACK CALIBRATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <row id="ACK_CALIB">
-      <cell 
+      <cell title = 
+      "       Data 0: CM_ID, 
+      Data 1: SubCommand
+      "
       >CALIBRATION</cell>
       <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>10</cell>
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x42</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>1</cell>
+      <cell>2</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <cell>0</cell>
       <cell>0</cell>
     </row>
 
@@ -122,64 +125,26 @@
     <!-- ACK SETUP MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <row id="ACK_SETUP_MEAS">
-      <cell
+      <cell title =
+      "       Data 00-03: RESISTOR_CONTACT1_2
+       Data 04-07: CAPACITY_CM_ID
+       Data 08-11: RESISTANCE_CM_ID
+       Data 12-15: Voltage
+       Data 16-19: Current
+       Data 20-23: Phase
+       Data 24-27: Frequency       
+      "
       >SETUP_MEASURE</cell>
       <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>10</cell>
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x43</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>22</cell>
+      <cell>29</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
       <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>C</cell>
-      <cell colspan="4">0.000005</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">24.67</cell>
-      <cell/>
-      <cell/>
-      <cell/>
       <cell colspan="4">0.005</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">90.01</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">50000.0</cell>    
-      <cell/>
-      <cell/>
-      <cell/>  
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- ACK START MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="ACK_START_MEAS">
-      <cell title = 
-      "       Data 00-03: Capacity or inductivity result
-       Data 04-07: Resistance result
-      "
-      >START_MEASURE</cell>
-      <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>10</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x44</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>22</cell>
-      <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>C</cell>
-      <cell colspan="4">0.000006</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">23.45</cell>
       <cell/>
       <cell/>
       <cell/>
@@ -187,30 +152,101 @@
       <cell/>
       <cell/>
       <cell/>
-      <cell colspan="4">97.12</cell>
+      <cell colspan="4">10000.00</cell>
       <cell/>
       <cell/>
       <cell/>
-      <cell colspan="4">60000.0</cell>    
+      <cell colspan="4">10.01</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">0.0025</cell>    
       <cell/>
       <cell/>
       <cell/>  
+      <cell colspan="4">68.0</cell>    
+      <cell/>
+      <cell/>
+      <cell/>  
+      <cell colspan="4">1000.0</cell>    
+      <cell/>
+      <cell/>
+      <cell/>        
     </row>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- ACK START MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <row id="ACK_START_MEAS">
+      <cell title = 
+      "       Data 00: Comp Type1
+       Data 01-04: Comp Value1
+       Data 05: Comp Type2
+       Data 06-09 Comp Value2
+       Data 10-13: Voltage
+       Data 14-17: Current
+       Data 18-21: Phase
+       Data 22-25: Frequency
+       "
+      >START_MEASURE</cell>
+      <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <cell>10</cell>
+      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <cell>0x44</cell>
+      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <cell>27</cell>
+      <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <cell>0</cell>
+      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <cell>R</cell>
+      <cell colspan="4">998.001</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell>C</cell>
+      <cell colspan="4">0.00075</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">24.00</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">0.006</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">99.00</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">6000.0</cell>    
+      <cell/>
+      <cell/>
+      <cell/>  
+      </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!-- ACK START AUTOPOLARITY MEASURE C ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <row id="ACK_START_AUTOPOLARITY_MEAS_C">
       <cell title = 
-      "       Data 00-03: Capacity
-      "
+      "       Data 00: Comp Type1
+       Data 01-04: Comp Value1
+       Data 05: Comp Type2
+       Data 06-09 Comp Value2
+       Data 10-13: Voltage
+       Data 14-17: Current
+       Data 18-21: Phase
+       Data 22-25: Frequency
+       "
       >START_AUTOPOLARITY_C</cell>
       <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>10</cell>
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x47</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>22</cell>
+      <cell>27</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
       <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -219,6 +255,11 @@
       <cell/>
       <cell/>
       <cell/>
+      <cell>R</cell>
+      <cell colspan="4">0.800</cell>
+      <cell/>
+      <cell/>
+      <cell/>      
       <cell colspan="4">28.43</cell>
       <cell/>
       <cell/>
@@ -238,52 +279,12 @@
     </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!-- ACK START AUTODETECT MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <row id="ACK_START_AUTODETECT_MEAS">
-      <cell title = 
-      "       Data 00-03: Capacity or inductivity result
-       Data 04-07: Resistance result
-      "
-      >START_AUTODETECT</cell>
-      <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>10</cell>
-      <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0x48</cell>
-      <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>22</cell>
-      <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>0</cell>
-      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>R</cell>
-      <cell colspan="4">0.000002</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">12.45</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">0.007</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">35.21</cell>
-      <cell/>
-      <cell/>
-      <cell/>
-      <cell colspan="4">67000.0</cell>    
-      <cell/>
-      <cell/>
-      <cell/>  
-    </row>
-
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!-- ACK START FORWARD VOLTAGE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <row id="ACK_START_FORWARDVOLTAGE_MEAS">
       <cell title = 
       "       Data 00-03: Voltage result
+      Data 04-07: Current Result
       "
       >START_FORWARD_VOLTAGE</cell>
       <!-- Delay ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
