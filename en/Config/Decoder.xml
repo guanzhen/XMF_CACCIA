@@ -28,18 +28,23 @@
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >CALIBRATION</Line>
+        <Line byteIndex="2" format="c"   >CONTACT_MODULE</Line>
+        <Line byteIndex="3" format="c"   >SUBCOMMAND</Line>
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >SETUP_MEASURE</Line>
         <Line byteIndex="2" format="c"   >CONTACT_MODULE</Line>
         <Line byteIndex="3" format="a"   >COMPONENT_TYPE</Line>
         <Line byteIndex="4" format="f"   >EXPECTED_RESULT</Line>
+        <Line byteIndex="8" format="x"   >MODE_SELECT</Line>
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >START_MEASURE</Line>
         <Line byteIndex="2" format="a"   >COMPONENT_TYPE</Line>
         <Line byteIndex="3" format="f"   >EXPECTED_RESULT</Line>
         <Line byteIndex="7" format="c"   >MEASUREMENT_CYCLES</Line>
+        <Line byteIndex="8" format="x"   >MODE_SELECT</Line>
+
       </cmd>
       <cmd>
         <Line byteIndex="0" format="x"   >START_AUTOPOLARITY_C</Line>        
@@ -85,40 +90,52 @@
         <Line byteIndex="2" format="state">STATE</Line>
         <Line byteIndex="3" format="f"    >RESISTOR_CANTACT1_2</Line>
         <Line byteIndex="7" format="f"    >CAPACITY</Line>
+        <Line byteIndex="11" format="f"   >RESISTANCE</Line>
+        <Line byteIndex="15" format="f"   >VOLTAGE_RESULT</Line>
+        <Line byteIndex="19" format="f"   >CURRENT_RESULT</Line>
+        <Line byteIndex="23" format="f"   >PHASESHIFT</Line>
+        <Line byteIndex="27" format="f"   >FREQUENCY</Line>
+        
       </ack>
       <ack>
         <Line byteIndex="0" format="x"    >CALIBRATION</Line>
         <Line byteIndex="2" format="state">STATE</Line>        
+        <Line byteIndex="3" format="x"    >SUBCOMMAND</Line>        
       </ack>
       <ack>
         <Line byteIndex="0" format="x"    >SETUP_MEASURE</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
-        <Line byteIndex="4" format="f"    >CAPACITY</Line>        
-        <Line byteIndex="8" format="f"    >VOLTAGE_RESULT</Line>
-        <Line byteIndex="12" format="f"   >CURRENT_RESULT</Line>
-        <Line byteIndex="16" format="f"   >PHASESHIFT</Line>
-        <Line byteIndex="20" format="f"   >FREQUENCY</Line>
+        <Line byteIndex="3" format="f"    >RESISTOR_CANTACT1_2</Line>
+        <Line byteIndex="7" format="f"    >CAPACITY</Line>
+        <Line byteIndex="11" format="f"   >RESISTANCE</Line>
+        <Line byteIndex="15" format="f"   >VOLTAGE_RESULT</Line>
+        <Line byteIndex="19" format="f"   >CURRENT_RESULT</Line>
+        <Line byteIndex="23" format="f"   >PHASESHIFT</Line>
+        <Line byteIndex="27" format="f"   >FREQUENCY</Line>
       </ack>
       <ack>
         <Line byteIndex="0" format="x"    >START_MEASURE</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
-        <Line byteIndex="4" format="f"    >CAPACITY</Line>        
-        <Line byteIndex="8" format="f"    >VOLTAGE_RESULT</Line>
-        <Line byteIndex="12" format="f"    >CURRENT_RESULT</Line>
-        <Line byteIndex="16" format="f"    >PHASESHIFT</Line>
-        <Line byteIndex="20" format="f"    >FREQUENCY</Line>
+        <Line byteIndex="3" format="a"    >COMPONENT_TYPE1</Line>
+        <Line byteIndex="4" format="f"    >COMP_VALUE1</Line>        
+        <Line byteIndex="8" format="a"    >COMPONENT_TYPE2</Line>
+        <Line byteIndex="9" format="f"    >COMP_VALUE2</Line>                
+        <Line byteIndex="13" format="f"   >VOLTAGE_RESULT</Line>
+        <Line byteIndex="17" format="f"   >CURRENT_RESULT</Line>
+        <Line byteIndex="21" format="f"   >PHASESHIFT</Line>
+        <Line byteIndex="25" format="f"   >FREQUENCY</Line>
       </ack>
       <ack>
         <Line byteIndex="0" format="x"    >START_AUTOPOLARITY_C</Line>
         <Line byteIndex="2" format="state">STATE</Line>
-        <Line byteIndex="3" format="a"    >COMPONENT_TYPE</Line>
-        <Line byteIndex="4" format="f"    >CAPACITY</Line>        
-        <Line byteIndex="8" format="f"    >VOLTAGE_RESULT</Line>
-        <Line byteIndex="12" format="f"    >CURRENT_RESULT</Line>
-        <Line byteIndex="16" format="f"    >PHASESHIFT</Line>
-        <Line byteIndex="20" format="f"    >FREQUENCY</Line>
+        <Line byteIndex="3" format="a"    >COMPONENT_TYPE1</Line>
+        <Line byteIndex="4" format="f"    >COMP_VALUE1</Line>        
+        <Line byteIndex="8" format="a"    >COMPONENT_TYPE2</Line>
+        <Line byteIndex="9" format="f"    >COMP_VALUE2</Line>                
+        <Line byteIndex="13" format="f"   >VOLTAGE_RESULT</Line>
+        <Line byteIndex="17" format="f"   >CURRENT_RESULT</Line>
+        <Line byteIndex="21" format="f"   >PHASESHIFT</Line>
+        <Line byteIndex="25" format="f"   >FREQUENCY</Line>
       </ack>      
       <ack>
         <Line byteIndex="0" format="x"    >START_FORWARD_VOLTAGE</Line>

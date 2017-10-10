@@ -37,14 +37,18 @@
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>1</cell>
     <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <cell style="color:#101010;font-size:7pt;">3</cell>
+    <cell style="color:#101010;font-size:7pt;">1</cell>
   </row>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!-- CMD CALIBRATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_CALIB">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title = "  Para 00: Contact module id 1-3        Para 01: Subcommand ">CALIBRATION</cell>
+    <cell title = 
+    "Para 00: Contact module id 1-3
+    Para 01: Subcommand 
+    "
+    >CALIBRATION</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x42</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -58,7 +62,15 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_SETUP_MEAS">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00:       Contact module id 1-3        Para 01:       Component type C-R-D-L        Para 02-05: Expected result        Para 06:ModeSel Bit[0:1](Model): 00_Auto 01_Serial 10_Parallel Bit[2:3](Freq):00_Auto 01_1kHz 10_10kHz">SETUP_MEASURE</cell>
+    <cell title=
+    "     Para 00:       Contact module id 1-3
+    Para 01:       Component type C-R-D-L
+    Para 02-05: Expected result
+    Para 06:ModeSel 
+      Bit[0:1](Model): 00_Auto 01_Serial 10_Parallel 
+      Bit[2:3](Freq):00_Auto 01_1kHz 10_10kHz
+      "
+      >SETUP_MEASURE</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x43</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -77,7 +89,14 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_START_MEAS">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00:       Component type C-R-L        Para 01-04:      Para 05: Number of cycles        Para 06:ModeSel Bit[0:1](Model): 00_Auto 01_Serial 10_Parallel Bit[2:3](Freq):00_Auto 01_1kHz 10_10kHz">START_MEASURE</cell>
+    <cell title="     Para 00:       Component type C-R-L        
+    Para 01-04: Expected result
+    Para 05: Number of cycles        
+    Para 06:ModeSel 
+      Bit[0:1](Model): 00_Auto 01_Serial 10_Parallel 
+      Bit[2:3](Freq):00_Auto 01_1kHz 10_10kHz
+    "
+    >START_MEASURE</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x44</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -96,7 +115,11 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <row id="CMD_START_AUTOPOL_MEAS_C">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00: Polarity         Para 01-04: Nominal component voltage        Para 05-08: Nominal component capacity       ">START_AUTOPOLARITY_C</cell>
+    <cell title="       Para 00: Polarity         
+    Para 01-04: Nominal component voltage        
+    Para 05-08: Nominal component capacity       
+    "
+    >START_AUTOPOLARITY_C</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x47</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -115,9 +138,13 @@
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!-- CMD START FORWARD VOLTAGE MEASURE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  <row id="CMD_START_FOREWARD_VOLTAGE_MEAS">
+  <row id="CMD_START_FORWARD_VOLTAGE_MEAS">
     <!-- Command and command description ~~~~~~~~~~~~~~-->
-    <cell title="       Para 00: Polarity         Para 01-04: Nominal current (I_measure)        Para 05-08  Max. voltage (V_max)       ">START_FORWARD_VOLTAGE</cell>
+    <cell title="       Para 00: Polarity         
+    Para 01-04: Nominal current (I_measure)        
+    Para 05-08  Max. voltage (V_max)       
+    "
+    >START_FORWARD_VOLTAGE</cell>
     <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <cell>0x49</cell>
     <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
