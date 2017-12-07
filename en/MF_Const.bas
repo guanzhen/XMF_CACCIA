@@ -67,6 +67,9 @@
 #define PARAM_GET_MEMORY_START  0x1B
 #define PARAM_GET_MEMORY_LINE   0x1D
 #define PARAM_GET_MEMORY_END    0x1E
+#define PARAM_SEND_MEMORY_START 0x1B
+#define PARAM_SEND_MEMORY_LINE  0x1D
+#define PARAM_SEND_MEMORY_END   0x1E
 #define PARAM_MEMORY_SINGLE     0x1F
 
 'Ackerrors ~~~~~~~~~~~~~~~~~~~~~~~~~

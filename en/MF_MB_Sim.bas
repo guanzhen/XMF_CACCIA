@@ -85,13 +85,13 @@ Sub OnClick_BUTTON_STARTREC(Reason)
           ReDim senddata(24)
           senddata(0) = $(CMD_GET_DATA)
           ' Len ~~~~~~~~~
-          senddata(1) = 17
+          senddata(1) = 7
           ' State ~~~~~~~
           senddata(2) = 0
-          For i = 3 to 18
+          For i = 3 to 8
             senddata(i) = CInt( 200 * Rnd + 1 )
           Next
-          lendata     = 19
+          lendata     = 9
           sendAckMessageOptRandAckErr sendData , lendata
         ElseIf RecData(2) = $(PARAM_MEMORY_SINGLE) Then
           Visual.Script("ji").MakeERunHidden
@@ -116,15 +116,46 @@ Sub OnClick_BUTTON_STARTREC(Reason)
           sendAckMessageOptRandAckErr sendData , lendata
           Visual.Script("ji").MakeERunVisible
         End If
-      ElseIf RecData(0) = $(CMD_SEND_DATA) And RecData(2) = $(PARAM_MEMORY_SINGLE) Then
-        Visual.Script("ji").MakeERunHidden
-        ' Write data single ~~~~~~~~~~~~~~~~~~~~~~
-        senddata(0) = $(CMD_SEND_DATA)
-        senddata(1) = 1
-        senddata(2) = 0
-        lendata     = 3
-        sendAckMessageOptRandAckErr sendData , lendata
-        Visual.Script("ji").MakeERunVisible
+	  ElseIf RecData(0) = $(CMD_SEND_DATA) And RecData(2) < &h20 Then
+        ' Memory ack ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        If RecData(2) = $(PARAM_SEND_MEMORY_START) Or RecData(2) = $(PARAM_SEND_MEMORY_END) Then
+          If RecData(2) = $(PARAM_SEND_MEMORY_START) Then
+            Visual.WaitCommand.Style.display    = "none"
+            Visual.ReadMemoryIcon.Style.display = "block"
+            Visual.DownloadAnim.Style.display   = "block"
+          End If
+          If RecData(2) = $(PARAM_SEND_MEMORY_END) Then
+            Visual.WaitCommand.Style.display    = "block"
+            Visual.ReadMemoryIcon.Style.display = "none"
+            Visual.DownloadAnim.Style.display   = "none"
+          End If
+          ReDim senddata(6)
+          ' Memory start or Memory end ~~~~~~~~~~
+          senddata(0) = $(CMD_SEND_DATA)
+          ' Len ~~~~~~~~~
+          senddata(1) = 1
+          ' State ~~~~~~~
+          senddata(2) = 0
+          lendata     = 3
+          sendAckMessageOptRandAckErr sendData , lendata
+        ElseIf RecData(2) = $(PARAM_SEND_MEMORY_LINE) Then
+          senddata(0) = $(CMD_SEND_DATA)
+          ' Len ~~~~~~~~~
+          senddata(1) = 1
+          ' State ~~~~~~~
+          senddata(2) = 0
+          lendata     = 3
+          sendAckMessageOptRandAckErr sendData , lendata
+        ElseIf RecData(2) = $(PARAM_MEMORY_SINGLE) Then
+          Visual.Script("ji").MakeERunHidden
+          ' Write data single ~~~~~~~~~~~~~~~~~~~~~~
+          senddata(0) = $(CMD_SEND_DATA)
+          senddata(1) = 1
+          senddata(2) = 0
+          lendata     = 3
+          sendAckMessageOptRandAckErr sendData , lendata
+          Visual.Script("ji").MakeERunVisible
+        End If
       Else
         System.Start "indicateNewCmd"
         displayData = True

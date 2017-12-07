@@ -1,5 +1,5 @@
 Configversion V1.00
-COM4
+COM3
 115200
 False
 1
