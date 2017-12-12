@@ -115,10 +115,26 @@
       <!-- Command code ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0x42</cell>
       <!-- Length ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-      <cell>2</cell>
+      <cell>17</cell>
       <!-- State ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <cell>0</cell>
-      <cell>0</cell>
+      <!-- Parameter ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->      
+      <cell colspan="4">100.0</cell>
+      <cell/>
+      <cell/>
+      <cell/>      
+      <cell colspan="4">20.001</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">200.00</cell>
+      <cell/>
+      <cell/>
+      <cell/>
+      <cell colspan="4">20.001</cell>
+      <cell/>
+      <cell/>
+      <cell/>  
     </row>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
